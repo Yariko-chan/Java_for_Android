@@ -31,22 +31,10 @@ public class Lesson1 {
     private static void task5() {
         // HELLOcHELLO HELLOHELLOiHELLOofbjo
         String s = "?c? ??i#?###ofbjo##################";
-        String h = "HELLO";
 
-        int index;
-        /* delete all # */
-        while ((index = s.indexOf("#")) != -1) {
-            ;
-            s = s.substring(0, index) + s.substring(index + 1, s.length());
-        }
-
-        /*replase 7 with HELLO */
-        while ((index = s.indexOf("?")) != -1) {
-            ;
-            s = s.substring(0, index) + h + s.substring(index + 1, s.length());
-        }
-
-        System.out.println(s);
+        String preresult = s.replace("?", "HELLO");
+        String result  = preresult.replace("#", "");
+        System.out.println(result);
     }
 
     private static void task4() {
