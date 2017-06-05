@@ -1,5 +1,7 @@
 package Lesson5.ATM;
 
+import java.util.Arrays;
+
 /**
  * Created by Diana on 02.06.2017.
  */
@@ -20,7 +22,7 @@ public class ATM {
         this.bn100Count = bn100Count;
     }
 
-    private void giveCash(int bn20Count, int bn50Count, int bn100Count) {
+    private void giveCash(int bn100Count, int bn50Count, int bn20Count) {
         if (this.bn20Count < bn20Count ||
                 this.bn50Count < bn50Count ||
                 this.bn100Count < bn100Count) {
@@ -43,46 +45,9 @@ public class ATM {
     }
 
     public boolean getCash(int sum) {
-        int count100 = 0;
-        int count50 = 0;
-        int count20 = 0;
-        int rest = sum;
-
-        // determine count100 and rest = sum - (100*count100)
-        if (rest != 0 && getBn100Count() != 0) {
-            count100 = rest/100;
-            if (count100 <= getBn100Count()) {
-                rest = rest%100;
-            } else { /* if not enough 100-bank note, give as much as possible */
-                count100 = getBn100Count();
-                rest -= 100*count100;
-            }
-        }
-
-        // determine count50 and rest = sum - (50*count50)
-        if (rest != 0 && getBn50Count() != 0) {
-            count50 = rest/50;
-            if (count50 <= getBn50Count()) {
-                rest = rest%50;
-            } else {
-                count50 = getBn50Count();
-                rest -= 50*count50;
-            }
-        }
-
-        // determine count20 and rest = sum - (20*count20)
-        if (rest != 0 && getBn20Count() != 0) {
-            count20 = rest/20;
-            if (count20 <= getBn20Count()) {
-                rest = rest%20;
-            } else {
-                count20 = getBn20Count();
-                rest -= 20*count20;
-            }
-        }
-
-        if (rest == 0) {
-            giveCash(count20, count50, count100);
+        int[][] result = findMoneySetToGive(sum, new int[][]{{100, bn100Count}, {50, bn50Count}, {20, bn20Count}}, 0);
+        if (sum == sum(result)) {
+            giveCash(result[0][1], result[1][1], result[2][1]);
             return true;
         } else {
             System.out.println("Operation failed");
@@ -100,5 +65,38 @@ public class ATM {
 
     public int getBn100Count() {
         return bn100Count;
+    }
+
+    /**
+     * recursive function to find count of 20-, 50-, 100-notes to give sum
+     * @param sum = sum to give
+     * @param sourseMoneySet = {{100, 100Count}, {50, 50Count}, {20, 20Count}}
+     * @param layer = 0..2 - index in @sourseMoneySet
+     * @return int[][] result, structure like @sourseMoneySet, sum(result) = @sum or sum(result) < @sum if no solution
+     */
+    private int[][] findMoneySetToGive(int sum, int[][] sourseMoneySet, int layer) {
+        if (sum < 0) throw new IllegalArgumentException("Sum must be greater than 0.");
+
+        int notesCount = sum/sourseMoneySet[layer][0];
+        // notesCount is max count of notes for this sum or max available in sourseMoneySet
+        notesCount = (notesCount <= sourseMoneySet[layer][1]) ? notesCount : sourseMoneySet[layer][1];
+
+        int[][] resultMoneySet = {{100, 0}, {50, 0}, {20, 0}};
+        do {
+            if (layer == 2) {
+                resultMoneySet[layer][1] = notesCount;
+                return resultMoneySet;
+            } else {
+                resultMoneySet = findMoneySetToGive(sum - (sourseMoneySet[layer][0] * notesCount), sourseMoneySet, layer + 1);
+                resultMoneySet[layer][1] = notesCount;
+            }
+            notesCount--;
+        } while (notesCount >= 0  && sum(resultMoneySet) != sum );
+
+        return resultMoneySet;
+    }
+
+    private int sum(int[][] moneySet) {
+        return moneySet[0][1]*100 + moneySet[1][1]*50 + moneySet[2][1]*20;
     }
 }
