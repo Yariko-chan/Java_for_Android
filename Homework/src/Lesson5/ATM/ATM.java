@@ -1,7 +1,5 @@
 package Lesson5.ATM;
 
-import java.util.Arrays;
-
 /**
  * Created by Diana on 02.06.2017.
  */
@@ -10,13 +8,17 @@ public class ATM {
     private int bn50Count;
     private int bn100Count;
 
-    public ATM() {
+    private ATMOperationsListener listener;
+
+    public ATM(ATMOperationsListener listener) {
+        this.listener = listener;
         this.bn20Count = 0;
         this.bn50Count = 0;
         this.bn100Count = 0;
     }
 
-    public ATM(int bn20Count, int bn50Count, int bn100Count) {
+    public ATM(ATMOperationsListener listener, int bn50Count, int bn100Count, int bn20Count) {
+        this.listener = listener;
         this.bn20Count = bn20Count;
         this.bn50Count = bn50Count;
         this.bn100Count = bn100Count;
@@ -31,10 +33,7 @@ public class ATM {
             this.bn20Count -= bn20Count;
             this.bn50Count -= bn50Count;
             this.bn100Count -= bn100Count;
-            System.out.println("Please, take money: ");
-            System.out.println(bn20Count + " x 20");
-            System.out.println(bn50Count + " x 50");
-            System.out.println(bn100Count + " x 100\n");
+            listener.giveCash(bn100Count, bn50Count, bn20Count);
         }
     }
 
@@ -44,14 +43,12 @@ public class ATM {
         this.bn100Count += bn100Count;
     }
 
-    public boolean getCash(int sum) {
+    public void getCash(int sum) {
         int[][] result = findMoneySetToGive(sum, new int[][]{{100, bn100Count}, {50, bn50Count}, {20, bn20Count}}, 0);
         if (sum == sum(result)) {
             giveCash(result[0][1], result[1][1], result[2][1]);
-            return true;
         } else {
-            System.out.println("Operation failed");
-            return false;
+            giveCash(0, 0, 0);
         }
     }
 
