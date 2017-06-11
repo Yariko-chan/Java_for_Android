@@ -3,11 +3,12 @@ package Lesson5.ATM;
 import java.util.Scanner;
 
 /**
- * Created by Diana on 02.06.2017.
+ * Created by Diana on 11.06.2017.
  */
-public class ATMOperations  implements ATMOperationsListener{
-    public static void main(String[] args) {
-        ATM atm = new ATM(new ATMOperations(), 10, 5, 20);
+public class UI  implements ATMOperationsListener {
+
+    public void start() {
+        ATM atm = new ATM(this, 10, 5, 20);
         int sum;
 
         Scanner sc = new Scanner(System.in);
