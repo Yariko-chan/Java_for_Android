@@ -14,7 +14,7 @@ public class Clinic {
         Man m;
         m = new Patient();
         callMyAbstract(m);
-        // объект Human определён через Patient (откуда взять реализацию myAbstract)
+        // объект People определён через Patient (откуда взять реализацию myAbstract)
         // но доступа к методам и полям Patient нет!
         // пришлось бы делать два метода в каждом из классов
         m = new Doctor();

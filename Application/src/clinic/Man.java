@@ -60,7 +60,7 @@ public abstract class Man {
 
     @Override
     public String toString() {
-        return "Human{" +
+        return "People{" +
                 "age=" + age +
                 ", name='" + name + '\'' +
                 '}';
