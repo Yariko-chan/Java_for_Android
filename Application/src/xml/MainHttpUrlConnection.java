@@ -1,4 +1,4 @@
-package internet;
+package xml;
 
 import java.io.*;
 import java.net.HttpURLConnection;
