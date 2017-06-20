@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="json-simple-1.1.1">
+  <library name="gson-2.2.4-javadoc">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/libs/gson-2.2.4.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/json-simple-1.1.1.jar!/" />
