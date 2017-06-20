@@ -8,6 +8,7 @@ import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.util.ArrayList;
 
 /**
@@ -15,13 +16,14 @@ import java.util.ArrayList;
  */
 public class XmlDomParsing {
     public static final String FILE_URL = "test.xml";
+    public static final String FILE_COPY_URL = "test_copy.xml";
 
     public static void main(String[] args) {
 
         DOMParser parser = new DOMParser();
         Document doc = null;
         try {
-            doc = getDocument(doc);
+            doc = getDocument();
             Root root = parseDocument(doc);
             System.out.println(root.toString());
         } catch (Exception e) {
@@ -30,7 +32,8 @@ public class XmlDomParsing {
 
     }
 
-    private static Document getDocument(Document doc) throws Exception {
+    private static Document getDocument() throws Exception {
+        Document doc = null;
         try {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = dbf.newDocumentBuilder();

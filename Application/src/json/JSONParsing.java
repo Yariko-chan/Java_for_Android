@@ -7,7 +7,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -70,35 +69,4 @@ public class JSONParsing {
         return root;
     }
 
-    private static class Root {
-        private String name;
-        private ArrayList<People> people;
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public ArrayList<People> getPeople() {
-            return people;
-        }
-
-        public void setPeople(ArrayList<People> people) {
-            this.people = people;
-        }
-
-        @Override
-        public String toString() {
-            StringBuilder builder = new StringBuilder(name);
-            builder.append("\n");
-            for (People h: people) {
-
-                builder.append(h.toString() + "\n");
-            }
-            return builder.toString();
-        }
-    }
 }
