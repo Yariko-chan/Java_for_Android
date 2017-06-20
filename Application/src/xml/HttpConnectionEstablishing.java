@@ -8,7 +8,7 @@ import java.net.URL;
 /**
  * Created by user on 16.06.2017.
  */
-public class MainHttpUrlConnection {
+public class HttpConnectionEstablishing {
 
     private static final String LINK = "https://www.dropbox.com/s/71qlrpwlhduf9va/test.xml?dl=0";
 
@@ -36,25 +36,22 @@ public class MainHttpUrlConnection {
                 byte[] buffer = new byte[1024];
                 while((byteRead = in.read(buffer)) != -1) {
                     /**
-                     * нужно место, куда временно складировать инфу.
-                     * нелья её хранить в инпутстриме - это оперативка!
-                     * скачивать будем кусочками по buffer (зависит от мощности системы, но не программы)
-                     * in.read(buffer) - вычитывает с connections количество байт = buffer и записывает в buffer
-                     * возвращает количество прочтинаных байт
-                     * -1 = файл кончился
+                     * temporary storage for info required
+                     * saving in InputStream will cause big operative memory usage
+                     * downloading piece by piece size of buffer (depends on user system, not on your program)
+                     * in.read(buffer) - reads from @connection count of bytes = sizeof(buffer) and writes to buffer
+                     * returns count of readed bytes (may be less than sizeof(buffer because of error of EOF)
+                     * -1 = EOF
                       */
                     out.write(buffer, 0, byteRead);
                     /**
-                     * запиши в out из buffer начиная с 0 такое вот количество (byteRead)
-                     * т. е. запишется не весь массив Buffer 1024 элемента,
-                     * а только то количество, которое было считано (см. условие в while)
-                     *
+                     * write to @out from @buffer starting from 0 [byteRead] count of bytes
+                     * will be writed not all 1024 elements from @buffer,
+                     * but the readed count only(see while),other elements can be null or can store old info
                       */
                 }
 
             }
-
-
         } catch (MalformedURLException e) {
             System.out.println("Error: " + e.getMessage());
         } catch (IOException e) {

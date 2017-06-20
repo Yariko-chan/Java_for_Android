@@ -19,8 +19,6 @@ import java.util.ArrayList;
 public class XmlParsing extends DefaultHandler{
     public static final String FILE_NAME = "test.xml";
 
-    public static final String ROOT= "root";
-    public static final String PEOPLE= "people";
     public static final String ELEMENT= "element";
     public static final String AGE= "age";
     public static final String ID= "id";
@@ -36,8 +34,8 @@ public class XmlParsing extends DefaultHandler{
     public static void main(String[] args) {
         try {
 
-            XMLReader xr = XMLReaderFactory.createXMLReader();
             XmlParsing handler = new XmlParsing();
+            XMLReader xr = XMLReaderFactory.createXMLReader();
             xr.setContentHandler(handler);
             xr.setErrorHandler(handler);
 
@@ -107,15 +105,6 @@ public class XmlParsing extends DefaultHandler{
     public void characters (char ch[], int start, int length)
     {
         switch(currentElement) {
-            case ROOT: {
-                break;
-            }
-            case PEOPLE: {
-                break;
-            }
-            case ELEMENT: {
-                break;
-            }
             case AGE: {
                 String sAge = new String(ch, start, length);
                 currentHuman.setAge(new Integer(sAge));
