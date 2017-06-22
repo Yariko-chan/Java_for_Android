@@ -2,8 +2,62 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="893eb7cc-1af7-4270-82fb-edfbeba8439b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/regular_expressions/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/bankomat/Bankomat.class" afterPath="$PROJECT_DIR$/out/production/Application/bankomat/Bankomat.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/bankomat/Main.class" afterPath="$PROJECT_DIR$/out/production/Application/bankomat/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/bankomat/OnBankomatListener.class" afterPath="$PROJECT_DIR$/out/production/Application/bankomat/OnBankomatListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/bankomat/UI$1.class" afterPath="$PROJECT_DIR$/out/production/Application/bankomat/UI$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/bankomat/UI.class" afterPath="$PROJECT_DIR$/out/production/Application/bankomat/UI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/bankomat/Windows.class" afterPath="$PROJECT_DIR$/out/production/Application/bankomat/Windows.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/cars/BlueCar.class" afterPath="$PROJECT_DIR$/out/production/Application/cars/BlueCar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/cars/Car.class" afterPath="$PROJECT_DIR$/out/production/Application/cars/Car.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/cars/Main.class" afterPath="$PROJECT_DIR$/out/production/Application/cars/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/cars/RedCar.class" afterPath="$PROJECT_DIR$/out/production/Application/cars/RedCar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/clinic/Clinic.class" afterPath="$PROJECT_DIR$/out/production/Application/clinic/Clinic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/clinic/Doctor.class" afterPath="$PROJECT_DIR$/out/production/Application/clinic/Doctor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/clinic/Man.class" afterPath="$PROJECT_DIR$/out/production/Application/clinic/Man.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/clinic/Patient.class" afterPath="$PROJECT_DIR$/out/production/Application/clinic/Patient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/collections/Country.class" afterPath="$PROJECT_DIR$/out/production/Application/collections/Country.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/collections/Main$1.class" afterPath="$PROJECT_DIR$/out/production/Application/collections/Main$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/collections/Main.class" afterPath="$PROJECT_DIR$/out/production/Application/collections/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/collections/MainArrayList$1.class" afterPath="$PROJECT_DIR$/out/production/Application/collections/MainArrayList$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/collections/MainArrayList.class" afterPath="$PROJECT_DIR$/out/production/Application/collections/MainArrayList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/collections/MainHashSet.class" afterPath="$PROJECT_DIR$/out/production/Application/collections/MainHashSet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/collections/MainLinkedList.class" afterPath="$PROJECT_DIR$/out/production/Application/collections/MainLinkedList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/collections/MainMap.class" afterPath="$PROJECT_DIR$/out/production/Application/collections/MainMap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/collections/Student.class" afterPath="$PROJECT_DIR$/out/production/Application/collections/Student.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/date_and_time/DateTime.class" afterPath="$PROJECT_DIR$/out/production/Application/date_and_time/DateTime.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/date_and_time/Main.class" afterPath="$PROJECT_DIR$/out/production/Application/date_and_time/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/exceptions/Main.class" afterPath="$PROJECT_DIR$/out/production/Application/exceptions/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/figures/Figure.class" afterPath="$PROJECT_DIR$/out/production/Application/figures/Figure.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/figures/Main.class" afterPath="$PROJECT_DIR$/out/production/Application/figures/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/figures/Quadrate.class" afterPath="$PROJECT_DIR$/out/production/Application/figures/Quadrate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/figures/Rectangle.class" afterPath="$PROJECT_DIR$/out/production/Application/figures/Rectangle.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/figures/Round.class" afterPath="$PROJECT_DIR$/out/production/Application/figures/Round.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/files/FileWorks$Human.class" afterPath="$PROJECT_DIR$/out/production/Application/files/FileWorks$Human.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/files/FileWorks.class" afterPath="$PROJECT_DIR$/out/production/Application/files/FileWorks.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/interfaces/Button.class" afterPath="$PROJECT_DIR$/out/production/Application/interfaces/Button.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/interfaces/Main.class" afterPath="$PROJECT_DIR$/out/production/Application/interfaces/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/interfaces/OnClickListener.class" afterPath="$PROJECT_DIR$/out/production/Application/interfaces/OnClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/interfaces/OnToggleListener.class" afterPath="$PROJECT_DIR$/out/production/Application/interfaces/OnToggleListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/interfaces/Toggle.class" afterPath="$PROJECT_DIR$/out/production/Application/interfaces/Toggle.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/json/JSONParsing.class" afterPath="$PROJECT_DIR$/out/production/Application/json/JSONParsing.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/json/People.class" afterPath="$PROJECT_DIR$/out/production/Application/json/People.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/json/Root.class" afterPath="$PROJECT_DIR$/out/production/Application/json/Root.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/main_pack/FirstClass.class" afterPath="$PROJECT_DIR$/out/production/Application/main_pack/FirstClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/main_pack/NewClass.class" afterPath="$PROJECT_DIR$/out/production/Application/main_pack/NewClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/new_pack/SecondClass.class" afterPath="$PROJECT_DIR$/out/production/Application/new_pack/SecondClass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/regular_expressions/Main.class" afterPath="$PROJECT_DIR$/out/production/Application/regular_expressions/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/xml/HttpConnectionEstablishing.class" afterPath="$PROJECT_DIR$/out/production/Application/xml/HttpConnectionEstablishing.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/xml/XmlDomParsing$1.class" afterPath="$PROJECT_DIR$/out/production/Application/xml/XmlDomParsing$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/xml/XmlDomParsing$Human.class" afterPath="$PROJECT_DIR$/out/production/Application/xml/XmlDomParsing$Human.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/xml/XmlDomParsing$Root.class" afterPath="$PROJECT_DIR$/out/production/Application/xml/XmlDomParsing$Root.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/xml/XmlDomParsing.class" afterPath="$PROJECT_DIR$/out/production/Application/xml/XmlDomParsing.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/regular_expressions/Main.java" afterPath="$PROJECT_DIR$/src/regular_expressions/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.json" afterPath="$PROJECT_DIR$/test.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.xml" afterPath="$PROJECT_DIR$/test.xml" />
     </list>
     <ignored path="Application.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,53 +78,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="XmlDomParsing.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xml/XmlDomParsing.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/regular_expressions/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileWorks.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/files/FileWorks.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="40" column="9" lean-forward="false" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JSONParsing.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/json/JSONParsing.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="17" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Root.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/json/Root.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -97,13 +109,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/figures/Round.java" />
-        <option value="$PROJECT_DIR$/src/figures/Rectangle.java" />
-        <option value="$PROJECT_DIR$/src/figures/Square.java" />
-        <option value="$PROJECT_DIR$/src/interfaces/ASomeClass.java" />
-        <option value="$PROJECT_DIR$/src/interfaces/AbstractClass.java" />
-        <option value="$PROJECT_DIR$/src/interfaces/SomeInterface.java" />
-        <option value="$PROJECT_DIR$/src/interfaces/SomeInterfaceRealizaion.java" />
         <option value="$PROJECT_DIR$/src/interfaces/Man.java" />
         <option value="$PROJECT_DIR$/src/interfaces/Human.java" />
         <option value="$PROJECT_DIR$/src/interfaces/Learner.java" />
@@ -141,20 +146,28 @@
         <option value="$PROJECT_DIR$/src/internet/MainXmlJson.java" />
         <option value="$PROJECT_DIR$/src/json/JSONParser.java" />
         <option value="$PROJECT_DIR$/src/json/Human.java" />
-        <option value="$PROJECT_DIR$/src/regular_expressions/Main.java" />
         <option value="$PROJECT_DIR$/test.json" />
         <option value="$PROJECT_DIR$/src/xml/MainXmlJson.java" />
         <option value="$PROJECT_DIR$/src/xml/MainHttpUrlConnection.java" />
         <option value="$PROJECT_DIR$/src/json/JSONParsing.java" />
         <option value="$PROJECT_DIR$/src/xml/XmlDomParsing.java" />
         <option value="$PROJECT_DIR$/src/json/Root.java" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/patterns/Controller.java" />
+        <option value="$PROJECT_DIR$/src/patterns/View.java" />
+        <option value="$PROJECT_DIR$/src/patterns/singletone/View.java" />
+        <option value="$PROJECT_DIR$/src/patterns/singletone/Controller.java" />
+        <option value="$PROJECT_DIR$/src/patterns/builder/Student.java" />
+        <option value="$PROJECT_DIR$/src/patterns/builder/Main.java" />
+        <option value="$PROJECT_DIR$/src/regular_expressions/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
-    <option name="width" value="960" />
-    <option name="height" value="1040" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -174,9 +187,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -202,24 +213,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -235,34 +228,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="json" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
+              <option name="myItemId" value="regular_expressions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/json-simple-1.1.1.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -270,6 +247,8 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -277,6 +256,7 @@
       <recent name="main_pack" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="patterns.builder" />
       <recent name="json" />
       <recent name="files" />
     </key>
@@ -293,7 +273,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.JSONParsing">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration default="false" name="MainHashSet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -607,9 +587,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.JSONParsing" />
-        <item index="1" class="java.lang.String" itemvalue="Application.XmlDomParsing" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Application.JSONParsing" />
+        <item index="2" class="java.lang.String" itemvalue="Application.XmlDomParsing" />
         <item index="3" class="java.lang.String" itemvalue="Application.HttpConnectionEstablishing" />
         <item index="4" class="java.lang.String" itemvalue="Application.MainHashSet" />
       </list>
@@ -675,30 +655,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32632744" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3252595" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3340708" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3326087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26555556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12953092" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3539823" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -737,17 +717,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/interfaces/AbstractClass.java" />
-    <entry file="file://$PROJECT_DIR$/src/interfaces/Human.java" />
-    <entry file="file://$PROJECT_DIR$/src/interfaces/Student.java" />
-    <entry file="file://$PROJECT_DIR$/src/interfaces/Learner.java" />
-    <entry file="file://$PROJECT_DIR$/src/figures/Figure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/figures/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -904,13 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/collections/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="63" column="19" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/collections/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -933,27 +895,17 @@
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/Downloads/libs/libs/gson-2.3.1-sources.jar!/com/google/gson/Gson.java" />
-    <entry file="file://$PROJECT_DIR$/src/regular_expressions/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="44" column="7" lean-forward="false" selection-start-line="44" selection-start-column="7" selection-end-line="44" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/json/People.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding />
+          <caret line="29" column="5" lean-forward="false" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -961,7 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="53" column="13" lean-forward="false" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -973,52 +924,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/jre/lib/rt.jar!/org/w3c/dom/Document.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_112/jre/lib/rt.jar!/org/w3c/dom/Document.class" />
     <entry file="file://$PROJECT_DIR$/src/json/Root.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/json/JSONParsing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="26" lean-forward="true" selection-start-line="16" selection-start-column="26" selection-end-line="17" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xml/XmlDomParsing.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
-          <folding />
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/files/FileWorks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="40" column="9" lean-forward="false" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        <state relative-caret-position="245">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/json/JSONParsing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="9" lean-forward="false" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="34" lean-forward="false" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/collections/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="805">
+          <caret line="63" column="19" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/patterns/singletone/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="56" lean-forward="false" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/patterns/singletone/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/patterns/builder/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/patterns/builder/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/regular_expressions/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="50" lean-forward="true" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
           <folding />
         </state>
       </provider>
