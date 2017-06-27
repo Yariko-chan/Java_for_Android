@@ -1,20 +1,11 @@
 /**
  * Created by Diana on 27.06.2017.
  */
-public class UI implements Controller.OnModelChangesListener {
+public class UI {
 
-    public UI() {
-    }
+    public UI() {}
 
-    public void start() {
-        Controller controller = Controller.getInstance();
-        controller.setModelListener(this);
-    }
-
-
-
-    @Override
-    public void OnModelChanged() {
+    public void displayData() {
 
     }
 }

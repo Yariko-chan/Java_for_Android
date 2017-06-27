@@ -3,14 +3,14 @@ import java.util.ArrayList;
 /**
  * Created by Diana on 27.06.2017.
  */
-public class Controller {
+public class Controller implements Data.OnDataChangesListener{
     private static Controller instance;
 
-    ArrayList<OnModelChangesListener> modelListeners;
+    private UI ui;
+    private Data data;
 
 
     private Controller() {
-        modelListeners = new ArrayList<>();
     }
 
     public static synchronized Controller getInstance() {
@@ -20,13 +20,14 @@ public class Controller {
         return instance;
     }
 
-    public void setModelListener(OnModelChangesListener listener) {
-        modelListeners.add(listener);
+
+    @Override
+    public void OnDataChanged() {
+        ui.displayData();
     }
 
-
-    public interface OnModelChangesListener {
-
-        public void OnModelChanged();
+    public void start() {
+        ui = new UI();
+        data = new Data();
     }
 }
