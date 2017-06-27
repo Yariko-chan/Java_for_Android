@@ -1,7 +1,5 @@
 package patterns.builder;
 
-import java.util.HashMap;
-
 /**
  * Created by user on 14.06.2017.
  */
