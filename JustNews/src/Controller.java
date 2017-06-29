@@ -28,6 +28,7 @@ public class Controller implements Data.OnDataChangesListener{
 
     public void start() {
         ui = new UI();
-        data = new Data();
+
+        data = new Data(this);
     }
 }

@@ -1,15 +1,22 @@
 package Lesson16;
 
+import java.util.Scanner;
+
 /**
  * Created by Diana on 29.06.2017.
  */
 public class Main {
 
     public static void main(String[] args) {
-        MyThread thread1 = new MyThread();
-        thread1.start();
-        MyThread thread2 = new MyThread();
-        thread2.start();
+        System.out.println("Enter \"start\" to start");
+        Scanner sc = new Scanner(System.in);
+        while(sc.nextLine().equals("start")) {
+            MyThread thread1 = new MyThread();
+            thread1.start();
+            MyThread thread2 = new MyThread();
+            thread2.start();
+        }
+
     }
 
     public synchronized static void print10(int[] ar) {
