@@ -29,7 +29,6 @@ public class DownloaderThread extends Thread {
 
     @Override
     public void run() {
-        parserThread.start();
 
         // download JSON
         downloadFile(JSON_LINK, JSON_FILE_NAME);
