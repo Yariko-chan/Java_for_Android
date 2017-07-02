@@ -15,4 +15,12 @@ public class TestClass {
     private void testPrivate() {
         System.out.println("testPrivate");
     }
+
+    public int getA() {
+        return a;
+    }
+
+    public String getText() {
+        return text;
+    }
 }
