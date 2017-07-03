@@ -9,11 +9,11 @@ public class TestClass {
     private String text = "text";
 
     public void testPublic() {
-        System.out.println("testPublic");
+        System.out.println("public method invoked");
     }
 
     private void testPrivate() {
-        System.out.println("testPrivate");
+        System.out.println("private method invoked");
     }
 
     public int getA() {
