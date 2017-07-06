@@ -1,12 +1,14 @@
 package main;
 
+import javax.swing.*;
+
 /**
  * Created by Diana on 27.06.2017.
  */
 public class Controller implements Data.OnDataChangesListener{
     private static Controller instance;
 
-    private UI ui;
+    private UIVoid ui;
     private Data data;
 
 
@@ -27,7 +29,7 @@ public class Controller implements Data.OnDataChangesListener{
     }
 
     public void start() {
-        ui = new UI();
+        UI.createUI();
 
         data = new Data(this);
     }
