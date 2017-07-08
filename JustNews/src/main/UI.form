@@ -22,7 +22,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="8fd01" class="javax.swing.JLabel">
+          <component id="8fd01" class="javax.swing.JLabel" binding="errorLabel">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -35,7 +35,7 @@
           </component>
           <component id="69e4c" class="javax.swing.JButton" binding="refreshButton" default-binding="true">
             <constraints>
-              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Refresh"/>
@@ -118,7 +118,7 @@
                   <text value="год"/>
                 </properties>
               </component>
-              <component id="18ad9" class="javax.swing.JRadioButton" binding="периодRadioButton" default-binding="true">
+              <component id="18ad9" class="javax.swing.JRadioButton" binding="displayPeriodRB">
                 <constraints>
                   <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -213,16 +213,21 @@
             </constraints>
             <properties/>
           </component>
-          <component id="778e9" class="javax.swing.JList" binding="list1" default-binding="true">
+          <scrollpane id="91a43" binding="newsListScrollPane">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="50"/>
-              </grid>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties>
-              <toolTipText value="подсказка?"/>
-            </properties>
-          </component>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="778e9" class="javax.swing.JList" binding="newsList">
+                <constraints/>
+                <properties>
+                  <toolTipText value=""/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
         </children>
       </grid>
     </children>

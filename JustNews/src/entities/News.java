@@ -1,5 +1,7 @@
 package entities;
 
+import javax.swing.*;
+
 /**
  * Created by Diana on 29.06.2017.
  */

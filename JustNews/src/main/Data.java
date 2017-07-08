@@ -64,11 +64,12 @@ public class Data {
         synchronized (parserThread) {
             parserThread.notify();
         }
+        listener.OnDataChanged(jsonList);
     }
 
 
     public interface OnDataChangesListener {
 
-        public void OnDataChanged();
+        public void OnDataChanged(ArrayList<News> jsonList);
     }
 }
