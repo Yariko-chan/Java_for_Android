@@ -1,67 +1,80 @@
 package main;
 
 import entities.News;
-import threads.DownloaderThread;
-import threads.ParserThread;
+import threads.GetDataThread;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by Diana on 27.06.2017.
  */
 public class Data {
+    private static Logger log = Logger.getLogger(Data.class.getName());
+
     private ArrayList<News> newsList;
 
-    private final OnDataChangesListener listener;
+    private final OnDataChangesListener dataChangesListener;
+    private final OnDataErrorsListener dataErrorsListener;
 
-    public Data(OnDataChangesListener listener) {
-        this.listener = listener;
+    public Data(OnDataChangesListener dataChangesListener, OnDataErrorsListener dataErrorsListener) {
+        this.dataChangesListener = dataChangesListener;
+        this.dataErrorsListener = dataErrorsListener;
     }
 
     public void getData(Controller.FileMode fileMode) {
 
         /**
-         * Parser                    |     Data(main)            | Download
-         * --------------------------------------------------------------------------
-         *                           |   <-   start   ->         |
-         * wait()                    | wait()                    | download JSON/XML
-         *                           |                           | parserThread.notify()
-         * parse JSON/XML            |                           | [END]
-         * mainThread.notify()       |                           |
-         * wait()                    | parseThread.getNewsList() |
-         *                           | parseThread.notify()      |
-         * [END]                     | ...                       |
+         *      Data(main)            | getDataThread
+         * -----------------------------------------------
+         *  start   ->                |
+         *  wait()                    | download JSON/XML
+         *                            | parse JSON/XML
+         *                            | mainThread.notify()
+         *  parseThread.getNewsList() | wait()
+         *  parseThread.notify()      |
+         *  ...                       | [END]
          */
 
         Thread currentThread = Thread.currentThread();
-        DownloaderThread downloadThread = new DownloaderThread(fileMode);
-        ParserThread parserThread = new ParserThread(fileMode);
-
-        downloadThread.setParserThread(parserThread);
-        parserThread.setDownloaderThread(downloadThread);
-        parserThread.setMainThread(currentThread);
-
-        downloadThread.start();
-        parserThread.start();
+        GetDataThread getDataThread = new GetDataThread(fileMode);
+        getDataThread.setMainThread(currentThread);
+        getDataThread.start();
         try {
             synchronized (currentThread) {
                 currentThread.wait();
             }
 
         } catch (InterruptedException e) {
-            // TODO handle exception
-            e.printStackTrace();
+            log.log(Level.SEVERE, "Main thread was interrupted. Exception: ", e);
+            // do noting, because main thread can't be interrupted
         }
-        newsList = parserThread.getNewsList();
-        synchronized (parserThread) {
-            parserThread.notify();
+
+        newsList = getDataThread.getNewsList();
+
+        if (null == newsList) {
+            // if list is null it means error occured
+            String errorMessage = getDataThread.getErrorMessage();
+            dataErrorsListener.displayError(errorMessage);
+        } else {
+            dataChangesListener.OnDataChanged(newsList);
         }
-        listener.OnDataChanged(newsList);
+
+        synchronized (getDataThread) {
+            getDataThread.notify();
+        }
+
     }
 
 
     public interface OnDataChangesListener {
 
         public void OnDataChanged(ArrayList<News> jsonList);
+    }
+
+    public interface OnDataErrorsListener {
+
+        public void displayError(String message);
     }
 }

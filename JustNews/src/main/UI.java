@@ -26,7 +26,7 @@ public class UI {
     private JRadioButton displayWeekRB;
     private JRadioButton displayMonthRB;
     private JRadioButton displayPeriodRB;
-    private JLabel errorLabel;
+    private JTextArea errorLabel;
     private JScrollPane newsListScrollPane;
 
     private ArrayList<OnUIActionListener> listeners = new ArrayList<>();
@@ -68,6 +68,7 @@ public class UI {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 for (OnUIActionListener listener: listeners) {
+                    errorLabel.setVisible(false);
                     listener.onRefreshBtnPressed();
                 }
             }
@@ -94,6 +95,11 @@ public class UI {
         newsList.setCellRenderer(new NewsRenderer());
 
         newsListScrollPane.setViewportView(newsList);
+    }
+
+    public void displayError(String message) {
+        errorLabel.setText(message);
+        errorLabel.setVisible(true);
     }
 
     public interface OnUIActionListener {

@@ -16,7 +16,7 @@ public class JSONParser implements Parser {
     public entities.Root parse(String fileName) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
 
-        // parses string to date field
+        // parses string in JSON file to Date field in Entity class
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z");
         mapper.setDateFormat(df);
 

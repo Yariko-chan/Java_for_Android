@@ -22,15 +22,17 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="8fd01" class="javax.swing.JLabel" binding="errorLabel">
+          <component id="f0ed1" class="javax.swing.JTextArea" binding="errorLabel">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
+              <background color="-1513240"/>
+              <foreground color="-1568990"/>
+              <inheritsPopupMenu value="false"/>
               <text value="Для вывода ошибок"/>
               <toolTipText value=""/>
-              <verticalAlignment value="1"/>
-              <visible value="true"/>
+              <visible value="false"/>
             </properties>
           </component>
           <component id="69e4c" class="javax.swing.JButton" binding="refreshButton" default-binding="true">
@@ -212,7 +214,9 @@
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-1513240"/>
+            </properties>
           </component>
           <scrollpane id="91a43" binding="newsListScrollPane">
             <constraints>

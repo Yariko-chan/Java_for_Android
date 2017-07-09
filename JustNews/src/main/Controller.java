@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Created by Diana on 27.06.2017.
  */
-public class Controller implements Data.OnDataChangesListener, UI.OnUIActionListener {
+public class Controller implements Data.OnDataChangesListener, UI.OnUIActionListener, Data.OnDataErrorsListener {
     private static Controller instance;
 
     private UI ui;
@@ -28,17 +28,16 @@ public class Controller implements Data.OnDataChangesListener, UI.OnUIActionList
         return instance;
     }
 
+    public void start() {
+        ui = UI.getUI(this);
+
+        data = new Data(this, this);
+        data.getData(currentFileMode);
+    }
 
     @Override
     public void OnDataChanged(ArrayList<News> newsList) {
         ui.displayData(newsList);
-    }
-
-    public void start() {
-        ui = UI.getUI(this);
-
-        data = new Data(this);
-        data.getData(currentFileMode);
     }
 
     @Override
@@ -54,5 +53,10 @@ public class Controller implements Data.OnDataChangesListener, UI.OnUIActionList
     @Override
     public void onRefreshBtnPressed() {
         data.getData(currentFileMode);
+    }
+
+    @Override
+    public void displayError(String message) {
+        ui.displayError(message);
     }
 }
