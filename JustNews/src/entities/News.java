@@ -1,6 +1,6 @@
 package entities;
 
-import javax.swing.*;
+import java.util.Date;
 
 /**
  * Created by Diana on 29.06.2017.
@@ -9,7 +9,7 @@ public class News {
     private int id;
     private String title;
     private String description;
-    private String date;
+    private Date date;
     private String[] keywords;
     private boolean visible;
 
@@ -40,11 +40,11 @@ public class News {
         this.description = description;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
