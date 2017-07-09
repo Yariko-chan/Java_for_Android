@@ -1,5 +1,7 @@
 package threads;
 
+import main.Controller;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -19,9 +21,16 @@ public class DownloaderThread extends Thread {
     public static final String JSON_FILE_NAME = "news.json";
     public static final String XML_FILE_NAME = "news.xml";
 
+    // log any errors
     private static Logger log = Logger.getLogger(DownloaderThread.class.getName());
+    // JSON or XML
+    private final Controller.FileMode currentFileMode;
 
     private ParserThread parserThread; // may be null!
+
+    public DownloaderThread(Controller.FileMode currentFileMode) {
+        this.currentFileMode = currentFileMode;
+    }
 
     public void setParserThread(ParserThread parserThread) {
         this.parserThread = parserThread;
@@ -30,27 +39,12 @@ public class DownloaderThread extends Thread {
     @Override
     public void run() {
 
-        // download JSON
-        downloadFile(JSON_LINK, JSON_FILE_NAME);
+        // select link and file name
+        String link = (currentFileMode == Controller.FileMode.JSON_MODE) ? JSON_LINK : XML_LINK;
+        String fileName = (currentFileMode == Controller.FileMode.JSON_MODE) ? JSON_FILE_NAME : XML_FILE_NAME;
 
-        // wake Parser
-        synchronized (parserThread) {
-            parserThread.notify();
-        }
-        synchronized (this) {
-            // and wait
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                log.info("DownloaderThread was interrupted");
-                Thread.currentThread().interrupt();// is it correct handling?
-            }
-        }
-
-        //------------------------------------------------------------
-
-        // download XML
-        downloadFile(XML_LINK, XML_FILE_NAME);
+        // download file
+        downloadFile(link, fileName);
 
         // wake Parser
         synchronized (parserThread) {

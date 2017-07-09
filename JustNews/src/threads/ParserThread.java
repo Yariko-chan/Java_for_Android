@@ -2,6 +2,7 @@ package threads;
 
 import entities.News;
 import entities.Root;
+import main.Controller;
 import parsers.JSONParser;
 import parsers.Parser;
 import parsers.XMLParser;
@@ -19,12 +20,19 @@ public class ParserThread extends Thread{
     public static final String JSON_FILE_NAME = "\\JustNews\\news.json";
     public static final String XML_FILE_NAME = "\\JustNews\\news.xml";
 
+    // JSON or XML
+    private final Controller.FileMode currentFileMode;
+
     private DownloaderThread downloaderThread;
     private Thread mainThread;
     private ArrayList<News> jsonList;
-    private ArrayList<News> xmlList;
+    private ArrayList<News> newsList;
 
     private static Logger log = Logger.getLogger(DownloaderThread.class.getName());
+
+    public ParserThread(Controller.FileMode currentFileMode) {
+        this.currentFileMode = currentFileMode;
+    }
 
     public void setDownloaderThread(DownloaderThread downloaderThread) {
         this.downloaderThread = downloaderThread;
@@ -47,26 +55,7 @@ public class ParserThread extends Thread{
         }
 
         // wake up, parse
-        parseJSON();
-
-        // wake up downloaderThread
-        synchronized (downloaderThread) {
-            downloaderThread.notify();
-        }
-
-        // sleep
-        synchronized (this) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                log.info("ParserThread was interrupted");
-                Thread.currentThread().interrupt();
-            }
-        }
-
-        //------------------------------------
-        // wake up, parse
-        parseXML();
+        parseFile();
 
         // wake up main
         synchronized (mainThread) {
@@ -84,32 +73,23 @@ public class ParserThread extends Thread{
         }
     }
 
-    private void parseXML() {
+    private void parseFile() {
         // TODO check xml and json valid
-        Parser parser = new XMLParser();
+
+        // select file and parser
+        Parser parser = (currentFileMode == Controller.FileMode.JSON_MODE) ? new JSONParser() : new XMLParser();
+        String fileName = (currentFileMode == Controller.FileMode.JSON_MODE) ? JSON_FILE_NAME : XML_FILE_NAME;
+
+        // parse
         try {
-            Root root = parser.parse(XML_FILE_NAME);
-            xmlList = root.getNews();
+            Root root = parser.parse(fileName);
+            newsList = root.getNews();
         } catch (IOException e) {
             // TODO handle xception
         }
     }
 
-    private void parseJSON() {
-        Parser parser = new JSONParser();
-        try {
-            Root root = parser.parse(JSON_FILE_NAME);
-            jsonList = root.getNews();
-        } catch (IOException e) {
-            // TODO handle xception
-        }
-    }
-
-    public ArrayList<News> getJsonList() {
-        return jsonList;
-    }
-
-    public ArrayList<News> getXmlList() {
-        return xmlList;
+    public ArrayList<News> getNewsList() {
+        return newsList;
     }
 }

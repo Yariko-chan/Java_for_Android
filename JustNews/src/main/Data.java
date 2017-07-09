@@ -10,39 +10,33 @@ import java.util.ArrayList;
  * Created by Diana on 27.06.2017.
  */
 public class Data {
-    private ArrayList<News> jsonList;
-    private ArrayList<News> xmlList;
+    private ArrayList<News> newsList;
 
     private final OnDataChangesListener listener;
 
-    public Data(OnDataChangesListener listener) {
+    public Data(OnDataChangesListener listener, Controller.FileMode currentFileMode) {
         this.listener = listener;
-        getData();
+        getData(currentFileMode);
     }
 
-    private void getData() {
+    private void getData(Controller.FileMode currentFileMode) {
 
         /**
-         * Parser                    |     Data(main)        | Download
+         * Parser                    |     Data(main)            | Download
          * --------------------------------------------------------------------------
-         *                           |   <-   start   ->     |
-         * wait()                    | wait()                | download JSON
-         *                           |                       | parserThread.notify()
-         * parse JSON                |                       | wait()
-         * downloaderThread.notify() |                       |
-         * wait()                    |                       | download XML
-         *                           |                       | [END]
-         * parse XML                 |                       |
-         * mainThread.notify()       |                       |
-         * wait()                    | parseThread.getJSON() |
-         *                           | parseThread.getXML()  |
-         *                           | parseThread.notify()  |
-         * [END]                     | ...                   |
+         *                           |   <-   start   ->         |
+         * wait()                    | wait()                    | download JSON/XML
+         *                           |                           | parserThread.notify()
+         * parse JSON/XML            |                           | [END]
+         * mainThread.notify()       |                           |
+         * wait()                    | parseThread.getNewsList() |
+         *                           | parseThread.notify()      |
+         * [END]                     | ...                       |
          */
 
         Thread currentThread = Thread.currentThread();
-        DownloaderThread downloadThread = new DownloaderThread();
-        ParserThread parserThread = new ParserThread();
+        DownloaderThread downloadThread = new DownloaderThread(currentFileMode);
+        ParserThread parserThread = new ParserThread(currentFileMode);
 
         downloadThread.setParserThread(parserThread);
         parserThread.setDownloaderThread(downloadThread);
@@ -59,12 +53,11 @@ public class Data {
             // TODO handle exception
             e.printStackTrace();
         }
-        jsonList = parserThread.getJsonList();
-        xmlList = parserThread.getXmlList();
+        newsList = parserThread.getNewsList();
         synchronized (parserThread) {
             parserThread.notify();
         }
-        listener.OnDataChanged(jsonList);
+        listener.OnDataChanged(newsList);
     }
 
 

@@ -3,7 +3,8 @@ package main;
 import entities.News;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 /**
@@ -14,8 +15,8 @@ public class UI {
     private JFrame jFrame;
     private JTextField textField1;
     private JList<News> newsList;
-    private JRadioButton JSONRadioButton;
-    private JRadioButton XMLRadioButton;
+    private JRadioButton jsonRadioButton;
+    private JRadioButton xmlRadioButton;
     private JTextField fromDateField;
     private JTextField toDateField;
     private JTextField filtersField;
@@ -28,6 +29,7 @@ public class UI {
     private JLabel errorLabel;
     private JScrollPane newsListScrollPane;
 
+    private ArrayList<OnUIActionListener> listeners = new ArrayList<>();
 
     private static UI ui;
 
@@ -37,24 +39,44 @@ public class UI {
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.pack();
         jFrame.setVisible(true);
-        
+
+        initComponents();
+    }
+
+    private void initComponents() {
+        ButtonGroup selectFileTypeGroup = new ButtonGroup();
+        selectFileTypeGroup.add(jsonRadioButton);
+        selectFileTypeGroup.add(xmlRadioButton);
+        jsonRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                for (OnUIActionListener listener: listeners) {
+                    listener.onJsonSelected();
+                }
+            }
+        });
+        xmlRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                for (OnUIActionListener listener: listeners) {
+                    listener.onXmlSelected();
+                }
+            }
+        });
     }
 
 
-    public static UI createUI() {
+    public static UI getUI(OnUIActionListener listener) {
         if (null == ui) {
             ui = new UI();
         }
+        ui.listeners.add(listener);
         return ui;
     }
 
     public void displayData(ArrayList<News> jsonList) {
 
         DefaultListModel<News> model = new DefaultListModel<>();
-//        ArrayList<String> test = new ArrayList<>();
-//        test.add("bngnbsf");
-//        test.add("gndhngh");
-//        test.add("gfsbgfbngfhn");
         for(News val : jsonList)
             model.addElement(val);
 
@@ -63,5 +85,13 @@ public class UI {
         newsList.setCellRenderer(new NewsRenderer());
 
         newsListScrollPane.setViewportView(newsList);
+    }
+
+    public interface OnUIActionListener {
+
+
+        void onJsonSelected();
+
+        void onXmlSelected();
     }
 }
