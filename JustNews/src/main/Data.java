@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 public class Data {
     private static Logger log = Logger.getLogger(Data.class.getName());
 
-    private ArrayList<News> newsList;
+    private GetDataThread getDataThread;;
 
     private final OnDataChangesListener dataChangesListener;
     private final OnDataErrorsListener dataErrorsListener;
@@ -24,52 +24,12 @@ public class Data {
     }
 
     public void getData(Controller.FileMode fileMode) {
-
-        /**
-         *      Data(main)            | getDataThread
-         * -----------------------------------------------
-         *  start   ->                |
-         *  wait()                    | download JSON/XML
-         *                            | parse JSON/XML
-         *                            | mainThread.notify()
-         *  parseThread.getNewsList() | wait()
-         *  parseThread.notify()      |
-         *  ...                       | [END]
-         */
-
-        Thread currentThread = Thread.currentThread();
-        GetDataThread getDataThread = new GetDataThread(fileMode);
-        getDataThread.setMainThread(currentThread);
+        getDataThread = new GetDataThread(fileMode, completionHandler, errorHandler);
         getDataThread.start();
-        try {
-            synchronized (currentThread) {
-                currentThread.wait();
-            }
-
-        } catch (InterruptedException e) {
-            log.log(Level.SEVERE, "Main thread was interrupted. Exception: ", e);
-            // do noting, because main thread can't be interrupted
-        }
-
-        newsList = getDataThread.getNewsList();
-
-        if (null == newsList) {
-            // if list is null it means error occured
-            String errorMessage = getDataThread.getErrorMessage();
-            dataErrorsListener.displayError(errorMessage);
-        } else {
-            dataChangesListener.OnDataChanged(newsList);
-        }
-
-        synchronized (getDataThread) {
-            getDataThread.notify();
-        }
-
     }
 
 
     public interface OnDataChangesListener {
-
         public void OnDataChanged(ArrayList<News> jsonList);
     }
 
@@ -77,4 +37,38 @@ public class Data {
 
         public void displayError(String message);
     }
+
+
+    public Runnable completionHandler = new Runnable() {
+        @Override
+        public void run() {
+
+            if (null == getDataThread) {
+                dataErrorsListener.displayError("Внутренняя ошибка: getDataThread is null");
+                return;
+            }
+
+            ArrayList<News> newsList = getDataThread.getNewsList();
+
+            if (null == newsList) {
+                dataErrorsListener.displayError("Внутренняя ошибка: newsList is null");
+            } else {
+                dataChangesListener.OnDataChanged(newsList);
+            }
+        }
+    };
+    public Runnable errorHandler = new Runnable() {
+        @Override
+        public void run() {
+
+            if (null == getDataThread) {
+                dataErrorsListener.displayError("Внутренняя ошибка: getDataThread is null");
+                return;
+            }
+
+
+            String errorMessage = getDataThread.getErrorMessage();
+            dataErrorsListener.displayError(errorMessage);
+        }
+    };
 }

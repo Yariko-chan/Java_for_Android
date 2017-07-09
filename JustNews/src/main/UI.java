@@ -70,6 +70,7 @@ public class UI {
                 for (OnUIActionListener listener: listeners) {
                     errorLabel.setVisible(false);
                     listener.onRefreshBtnPressed();
+                    refreshButton.setEnabled(false);
                 }
             }
         });
@@ -95,11 +96,15 @@ public class UI {
         newsList.setCellRenderer(new NewsRenderer());
 
         newsListScrollPane.setViewportView(newsList);
+
+        refreshButton.setEnabled(true);
     }
 
     public void displayError(String message) {
         errorLabel.setText(message);
         errorLabel.setVisible(true);
+
+        refreshButton.setEnabled(true);
     }
 
     public interface OnUIActionListener {

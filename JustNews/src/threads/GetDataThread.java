@@ -7,6 +7,7 @@ import parsers.JSONParser;
 import parsers.Parser;
 import parsers.XMLParser;
 
+import javax.swing.*;
 import javax.xml.ws.http.HTTPException;
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -33,17 +34,18 @@ public class GetDataThread extends Thread {
 
     // JSON or XML
     private final Controller.FileMode fileMode;
-
-    // link to main thread
-    private Thread mainThread;
+    private final Runnable completionHandler;
+    private final Runnable errorHandler;
 
     // result
     private ArrayList<News> newsList;
 
     private String errorMessage = "Unknown error";
 
-    public GetDataThread(Controller.FileMode fileMode) {
+    public GetDataThread(Controller.FileMode fileMode, Runnable completionHandler, Runnable errorHandler) {
         this.fileMode = fileMode;
+        this.completionHandler = completionHandler;
+        this.errorHandler = errorHandler;
     }
 
     @Override
@@ -59,25 +61,13 @@ public class GetDataThread extends Thread {
 
             // parse
             parseFile();
-        } catch (HTTPException | IOException e) {
-            // if errors occured, nothing to do (but finally)
-            return;
-        } finally {
-            // wake up main
-            synchronized (mainThread) {
-                mainThread.notify();
-            }
 
-            // wait until main gets results (data or error message)
-            // and then end thread
-            synchronized (this) {
-                try {
-                    wait();
-                } catch (InterruptedException e) {
-                    log.info("GetDataThread was interrupted");
-                    // nothing to do, end of thread
-                }
-            }
+            SwingUtilities.invokeLater(completionHandler);
+        } catch (HTTPException | IOException e) {
+            // if errors occured, nothing to do, just end thread
+            // catch error here to be able to exit thread
+            SwingUtilities.invokeLater(errorHandler);
+            return;
         }
     }
 
@@ -95,7 +85,6 @@ public class GetDataThread extends Thread {
             if (HttpURLConnection.HTTP_OK != response) {
                 log.log(Level.SEVERE, "Http response = " + response);
                 errorMessage = "Http response = " + response + " " + connection.getResponseMessage();
-                // TODO: some interface reaction
                 throw new HTTPException(response);
             } else {
                 in = connection.getInputStream();
@@ -118,7 +107,8 @@ public class GetDataThread extends Thread {
                     out.write(buffer, 0, byteRead);
                 }
             }
-            // catch all exceptions, log and throw again (will be catched in run()
+            // catch all exceptions, log and throw again
+            // (will be catched in run())
             // close connection and file in finally
         } catch (HTTPException e) {
             throw e;
@@ -171,9 +161,5 @@ public class GetDataThread extends Thread {
 
     public String getErrorMessage() {
         return errorMessage;
-    }
-
-    public void setMainThread(Thread mainThread) {
-        this.mainThread = mainThread;
     }
 }
