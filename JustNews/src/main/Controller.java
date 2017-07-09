@@ -37,7 +37,8 @@ public class Controller implements Data.OnDataChangesListener, UI.OnUIActionList
     public void start() {
         ui = UI.getUI(this);
 
-        data = new Data(this, currentFileMode);
+        data = new Data(this);
+        data.getData(currentFileMode);
     }
 
     @Override
@@ -48,5 +49,10 @@ public class Controller implements Data.OnDataChangesListener, UI.OnUIActionList
     @Override
     public void onXmlSelected() {
         currentFileMode = FileMode.XML_MODE;
+    }
+
+    @Override
+    public void onRefreshBtnPressed() {
+        data.getData(currentFileMode);
     }
 }

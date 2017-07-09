@@ -9,6 +9,7 @@ import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 /**
@@ -44,7 +45,9 @@ public class NewsRenderer extends JLabel implements ListCellRenderer<News>{
 
     private String getFormattedDate(Date date) {
         if (null == date) return "";
-        SimpleDateFormat sdf = new SimpleDateFormat("EEEE, dd MMMM yyyy");
+        // Locale.US because all data on english and russian(by default) looks strange
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE, dd MMMM yyyy", Locale.US);
+
         return sdf.format(date);
     }
 

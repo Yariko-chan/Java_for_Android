@@ -63,6 +63,15 @@ public class UI {
                 }
             }
         });
+
+        refreshButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                for (OnUIActionListener listener: listeners) {
+                    listener.onRefreshBtnPressed();
+                }
+            }
+        });
     }
 
 
@@ -93,5 +102,7 @@ public class UI {
         void onJsonSelected();
 
         void onXmlSelected();
+
+        void onRefreshBtnPressed();
     }
 }

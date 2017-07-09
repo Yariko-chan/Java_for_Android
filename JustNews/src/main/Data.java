@@ -14,12 +14,11 @@ public class Data {
 
     private final OnDataChangesListener listener;
 
-    public Data(OnDataChangesListener listener, Controller.FileMode currentFileMode) {
+    public Data(OnDataChangesListener listener) {
         this.listener = listener;
-        getData(currentFileMode);
     }
 
-    private void getData(Controller.FileMode currentFileMode) {
+    public void getData(Controller.FileMode fileMode) {
 
         /**
          * Parser                    |     Data(main)            | Download
@@ -35,8 +34,8 @@ public class Data {
          */
 
         Thread currentThread = Thread.currentThread();
-        DownloaderThread downloadThread = new DownloaderThread(currentFileMode);
-        ParserThread parserThread = new ParserThread(currentFileMode);
+        DownloaderThread downloadThread = new DownloaderThread(fileMode);
+        ParserThread parserThread = new ParserThread(fileMode);
 
         downloadThread.setParserThread(parserThread);
         parserThread.setDownloaderThread(downloadThread);
