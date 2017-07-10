@@ -1,4 +1,4 @@
-package main;
+package main.ui;
 
 import com.ctc.wstx.util.StringUtil;
 import com.sun.deploy.util.StringUtils;

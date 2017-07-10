@@ -1,5 +1,7 @@
 package entities;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -12,6 +14,24 @@ public class News {
     private Date date;
     private String[] keywords;
     private boolean visible;
+
+    public static Comparator<News> dateComparator = new Comparator<News>() {
+        @Override
+        public int compare(News n1, News n2) {
+            // latest news first
+            return -(n1.getDate().compareTo(n2.getDate()));
+        }
+    };
+
+    public static Comparator<News> keysComparator = new Comparator<News>() {
+        @Override
+        public int compare(News n1, News n2) {
+            // in alphabetical order
+            String n1FirstKey = (n1.getKeywords().length == 0) ? "" : n1.getKeywords()[0];
+            String n2FirstKey = (n2.getKeywords().length == 0) ? "" : n2.getKeywords()[0];
+            return n1FirstKey.compareTo(n2FirstKey);
+        }
+    };
 
     public News() {
     }
@@ -49,6 +69,7 @@ public class News {
     }
 
     public String[] getKeywords() {
+        Arrays.sort(keywords);
         return keywords;
     }
 

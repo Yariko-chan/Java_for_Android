@@ -1,4 +1,4 @@
-package main;
+package main.ui;
 
 import entities.News;
 
@@ -19,15 +19,15 @@ public class UI {
     private JRadioButton xmlRadioButton;
     private JTextField fromDateField;
     private JTextField toDateField;
-    private JTextField filtersField;
     private JButton refreshButton;
-    private JButton button1;
     private JRadioButton displayDayRB;
     private JRadioButton displayWeekRB;
     private JRadioButton displayMonthRB;
     private JRadioButton displayPeriodRB;
     private JTextArea errorLabel;
     private JScrollPane newsListScrollPane;
+    private JRadioButton sortByDateRadioBtn;
+    private JRadioButton sortByKeysRadioBtn;
 
     private ArrayList<OnUIActionListener> listeners = new ArrayList<>();
 
@@ -44,6 +44,7 @@ public class UI {
     }
 
     private void initComponents() {
+        // JSON/XML radioButtons
         ButtonGroup selectFileTypeGroup = new ButtonGroup();
         selectFileTypeGroup.add(jsonRadioButton);
         selectFileTypeGroup.add(xmlRadioButton);
@@ -64,6 +65,28 @@ public class UI {
             }
         });
 
+        // sort radioButtons
+        ButtonGroup selectSortGroup = new ButtonGroup();
+        selectSortGroup.add(sortByDateRadioBtn);
+        selectSortGroup.add(sortByKeysRadioBtn);
+        sortByDateRadioBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                for (OnUIActionListener listener: listeners) {
+                    listener.onSortByDateSelected();
+                }
+            }
+        });
+        sortByKeysRadioBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                for (OnUIActionListener listener: listeners) {
+                    listener.onSortByKeysSelected();
+                }
+            }
+        });
+
+        // refresh button
         refreshButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -115,5 +138,9 @@ public class UI {
         void onXmlSelected();
 
         void onRefreshBtnPressed();
+
+        void onSortByDateSelected();
+
+        void onSortByKeysSelected();
     }
 }

@@ -4,7 +4,7 @@ import entities.News;
 import threads.GetDataThread;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
+import java.util.Comparator;
 import java.util.logging.Logger;
 
 /**
@@ -17,25 +17,26 @@ public class Data {
 
     private final OnDataChangesListener dataChangesListener;
     private final OnDataErrorsListener dataErrorsListener;
+    private Controller.SortMode currentSortMode;
 
     public Data(OnDataChangesListener dataChangesListener, OnDataErrorsListener dataErrorsListener) {
         this.dataChangesListener = dataChangesListener;
         this.dataErrorsListener = dataErrorsListener;
     }
 
-    public void getData(Controller.FileMode fileMode) {
+    public void getData(Controller.FileMode fileMode, Controller.SortMode currentSortMode) {
         getDataThread = new GetDataThread(fileMode, completionHandler, errorHandler);
+        this.currentSortMode = currentSortMode;
         getDataThread.start();
     }
 
 
     public interface OnDataChangesListener {
-        public void OnDataChanged(ArrayList<News> jsonList);
+        public void onDataChanged(ArrayList<News> jsonList);
     }
 
     public interface OnDataErrorsListener {
-
-        public void displayError(String message);
+        public void onDataError(String message);
     }
 
 
@@ -44,16 +45,19 @@ public class Data {
         public void run() {
 
             if (null == getDataThread) {
-                dataErrorsListener.displayError("Внутренняя ошибка: getDataThread is null");
+                dataErrorsListener.onDataError("Внутренняя ошибка: getDataThread is null");
                 return;
             }
 
             ArrayList<News> newsList = getDataThread.getNewsList();
 
             if (null == newsList) {
-                dataErrorsListener.displayError("Внутренняя ошибка: newsList is null");
+                dataErrorsListener.onDataError("Внутренняя ошибка: newsList is null");
             } else {
-                dataChangesListener.OnDataChanged(newsList);
+                // return sorted list (date by default)
+                Comparator<News> comparator = (currentSortMode == Controller.SortMode.KEYS_MODE) ? News.keysComparator : News.dateComparator;
+                newsList.sort(comparator);
+                dataChangesListener.onDataChanged(newsList);
             }
         }
     };
@@ -62,13 +66,13 @@ public class Data {
         public void run() {
 
             if (null == getDataThread) {
-                dataErrorsListener.displayError("Внутренняя ошибка: getDataThread is null");
+                dataErrorsListener.onDataError("Внутренняя ошибка: getDataThread is null");
                 return;
             }
 
 
             String errorMessage = getDataThread.getErrorMessage();
-            dataErrorsListener.displayError(errorMessage);
+            dataErrorsListener.onDataError(errorMessage);
         }
     };
 }
