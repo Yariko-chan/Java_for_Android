@@ -18,7 +18,6 @@ public class News {
     public static Comparator<News> dateComparator = new Comparator<News>() {
         @Override
         public int compare(News n1, News n2) {
-            // latest news first
             return -(n1.getDate().compareTo(n2.getDate()));
         }
     };

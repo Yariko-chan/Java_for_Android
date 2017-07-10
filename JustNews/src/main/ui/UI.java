@@ -1,6 +1,7 @@
 package main.ui;
 
 import entities.News;
+import org.jdesktop.swingx.JXDatePicker;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,21 +14,22 @@ import java.util.ArrayList;
 public class UI {
     private JPanel mainPanel;
     private JFrame jFrame;
-    private JTextField textField1;
+    private JTextField searchField;
+    private JButton searchButton;
+    private JScrollPane newsListScrollPane;
     private JList<News> newsList;
     private JRadioButton jsonRadioButton;
     private JRadioButton xmlRadioButton;
-    private JTextField fromDateField;
-    private JTextField toDateField;
-    private JButton refreshButton;
+    private JRadioButton sortByDateRadioBtn;
+    private JRadioButton sortByKeysRadioBtn;
     private JRadioButton displayDayRB;
     private JRadioButton displayWeekRB;
     private JRadioButton displayMonthRB;
     private JRadioButton displayPeriodRB;
+    private JXDatePicker fromDateField;
+    private JXDatePicker toDateField;
     private JTextArea errorLabel;
-    private JScrollPane newsListScrollPane;
-    private JRadioButton sortByDateRadioBtn;
-    private JRadioButton sortByKeysRadioBtn;
+    private JButton refreshButton;
 
     private ArrayList<OnUIActionListener> listeners = new ArrayList<>();
 
@@ -43,7 +45,27 @@ public class UI {
         initComponents();
     }
 
+    public static UI getUI(OnUIActionListener listener) {
+        if (null == ui) {
+            ui = new UI();
+        }
+        ui.listeners.add(listener);
+        return ui;
+    }
+
     private void initComponents() {
+        // search
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String query = searchField.getText();
+                if (null == query || "" == query) return;
+                for (OnUIActionListener listener: listeners) {
+                    listener.onSearchBtnPressed(query);
+                }
+            }
+        });
+
         // JSON/XML radioButtons
         ButtonGroup selectFileTypeGroup = new ButtonGroup();
         selectFileTypeGroup.add(jsonRadioButton);
@@ -99,15 +121,6 @@ public class UI {
         });
     }
 
-
-    public static UI getUI(OnUIActionListener listener) {
-        if (null == ui) {
-            ui = new UI();
-        }
-        ui.listeners.add(listener);
-        return ui;
-    }
-
     public void displayData(ArrayList<News> jsonList) {
 
         DefaultListModel<News> model = new DefaultListModel<>();
@@ -142,5 +155,7 @@ public class UI {
         void onSortByDateSelected();
 
         void onSortByKeysSelected();
+
+        void onSearchBtnPressed(String query);
     }
 }

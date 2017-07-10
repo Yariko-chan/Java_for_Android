@@ -3,6 +3,7 @@ package main;
 import entities.News;
 import threads.GetDataThread;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.logging.Logger;
@@ -13,18 +14,19 @@ import java.util.logging.Logger;
 public class Data {
     private static Logger log = Logger.getLogger(Data.class.getName());
 
-    private GetDataThread getDataThread;;
-
     private final OnDataChangesListener dataChangesListener;
     private final OnDataErrorsListener dataErrorsListener;
+
     private Controller.SortMode currentSortMode;
+    private GetDataThread getDataThread;
+    private ArrayList<News> newsList;
 
     public Data(OnDataChangesListener dataChangesListener, OnDataErrorsListener dataErrorsListener) {
         this.dataChangesListener = dataChangesListener;
         this.dataErrorsListener = dataErrorsListener;
     }
 
-    public void getData(Controller.FileMode fileMode, Controller.SortMode currentSortMode) {
+    public void downloadData(Controller.FileMode fileMode, Controller.SortMode currentSortMode) {
         getDataThread = new GetDataThread(fileMode, completionHandler, errorHandler);
         this.currentSortMode = currentSortMode;
         getDataThread.start();
@@ -49,15 +51,32 @@ public class Data {
                 return;
             }
 
-            ArrayList<News> newsList = getDataThread.getNewsList();
+            newsList = getDataThread.getNewsList();
 
             if (null == newsList) {
                 dataErrorsListener.onDataError("Внутренняя ошибка: newsList is null");
             } else {
                 // return sorted list (date by default)
+
+                // get comparator
                 Comparator<News> comparator = (currentSortMode == Controller.SortMode.KEYS_MODE) ? News.keysComparator : News.dateComparator;
-                newsList.sort(comparator);
-                dataChangesListener.onDataChanged(newsList);
+
+                // sort in other thread (can be long)
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        newsList.sort(comparator);
+                        // return to main thread and transfer data to controller
+                        SwingUtilities.invokeLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                dataChangesListener.onDataChanged(newsList);
+                            }
+                        });
+                    }
+                }).start();
+
+
             }
         }
     };

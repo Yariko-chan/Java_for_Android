@@ -38,7 +38,7 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
         ui = UI.getUI(this);
 
         data = new Data(this, this);
-        data.getData(currentFileMode, currentSortMode);
+        data.downloadData(currentFileMode, currentSortMode);
     }
 
     //reactions for Data
@@ -57,7 +57,7 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
 
     @Override
     public void onRefreshBtnPressed() {
-        data.getData(currentFileMode, currentSortMode);
+        data.downloadData(currentFileMode, currentSortMode);
     }
 
     @Override
@@ -78,5 +78,10 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
     @Override
     public void onSortByKeysSelected() {
         currentSortMode = SortMode.KEYS_MODE;
+    }
+
+    @Override
+    public void onSearchBtnPressed(String query) {
+
     }
 }
