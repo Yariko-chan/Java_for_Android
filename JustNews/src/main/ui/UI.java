@@ -30,6 +30,7 @@ public class UI {
     private JXDatePicker toDateField;
     private JTextArea errorLabel;
     private JButton refreshButton;
+    private JPanel searchPanel;
 
     private ArrayList<OnUIActionListener> listeners = new ArrayList<>();
 
@@ -55,6 +56,7 @@ public class UI {
 
     private void initComponents() {
         // search
+        jFrame.getRootPane().setDefaultButton(searchButton);
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {

@@ -82,6 +82,6 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
 
     @Override
     public void onSearchBtnPressed(String query) {
-
+        data.search(query);
     }
 }

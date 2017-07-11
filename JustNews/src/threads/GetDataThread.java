@@ -10,9 +10,7 @@ import parsers.XMLParser;
 import javax.swing.*;
 import javax.xml.ws.http.HTTPException;
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.net.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -112,6 +110,15 @@ public class GetDataThread extends Thread {
             // close connection and file in finally
         } catch (HTTPException e) {
             throw e;
+        } catch (UnknownHostException e) {
+            log.log(Level.SEVERE, "Exception: ", e);
+            errorMessage = "Невозможно получить доступ: " + e.getLocalizedMessage() +
+                    "\n " + "Возможно, отсутствует подключние к Интернету";
+            throw e;
+        } catch (ConnectException e) {
+            log.log(Level.SEVERE, "Exception: ", e);
+            errorMessage = "Сайт недоступен: " + e.getLocalizedMessage();
+            throw e;
         } catch (MalformedURLException e){
             log.log(Level.SEVERE, "Exception: ", e);
             errorMessage = "Внутренняя ошибка: " + e.getLocalizedMessage();
@@ -143,10 +150,10 @@ public class GetDataThread extends Thread {
         String fileName = (fileMode == Controller.FileMode.JSON_MODE) ? JSON_FILE_NAME : XML_FILE_NAME;
 
         // parse
-        Root root = null;
+        Root root = null; // all file
         try {
             root = parser.parse(fileName);
-            newsList = root.getNews();
+            newsList = root.getNews(); // we need only news List
         } catch (IOException e) {
             // catch exception, log and throw again
             log.log(Level.SEVERE, "Exception: ", e);

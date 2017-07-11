@@ -32,7 +32,9 @@ public class NewsRenderer extends JLabel implements ListCellRenderer<News>{
         dateLabel.setText(getFormattedDate(news.getDate()));
 
         // if title void set beginning of description + "..."
-        String title = (null == news.getTitle()) ? getTitleFromDescription(news.getDescription()) : news.getTitle();
+        String title = (null == news.getTitle() || "".equals(news.getTitle()))
+                ? getTitleFromDescription(news.getDescription())
+                : news.getTitle();
         titleLabel.setText(title);
 
         descriptionLabel.setText(news.getDescription());

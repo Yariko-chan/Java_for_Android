@@ -9,10 +9,10 @@ import java.util.Date;
  */
 public class News {
     private int id;
-    private String title;
-    private String description;
+    private String title = "";
+    private String description = "";
     private Date date;
-    private String[] keywords;
+    private String[] keywords = {};
     private boolean visible;
 
     public static Comparator<News> dateComparator = new Comparator<News>() {
