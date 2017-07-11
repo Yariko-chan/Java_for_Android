@@ -1,4 +1,4 @@
-import main.Controller;
+import controller.Controller;
 
 /**
  * Created by Diana on 27.06.2017.
