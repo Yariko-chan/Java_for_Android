@@ -2,7 +2,6 @@ package data.threads;
 
 import data.entities.News;
 import data.entities.Root;
-import controller.Controller;
 import data.parsers.JSONParser;
 import data.parsers.Parser;
 import data.parsers.XMLParser;

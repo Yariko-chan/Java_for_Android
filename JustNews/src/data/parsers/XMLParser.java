@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 /**
  * Created by Diana on 29.06.2017.
  */
-public class XMLParser implements Parser {
+public class XMLParser extends Parser {
     @Override
     public Root parse(String fileName) throws IOException {
         XmlMapper mapper = new XmlMapper();

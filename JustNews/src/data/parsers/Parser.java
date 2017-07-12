@@ -8,6 +8,6 @@ import java.io.IOException;
 /**
  * Created by Diana on 29.06.2017.
  */
-public interface Parser {
-    public Root parse(String fileName) throws IOException;
+public abstract class Parser {
+    public abstract Root parse(String fileName) throws IOException;
 }

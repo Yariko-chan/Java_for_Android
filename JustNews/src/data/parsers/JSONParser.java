@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 /**
  * Created by Diana on 29.06.2017.
  */
-public class JSONParser implements Parser {
+public class JSONParser extends Parser {
     @Override
     public data.entities.Root parse(String fileName) throws IOException {
         ObjectMapper mapper = new ObjectMapper();

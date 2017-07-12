@@ -1,7 +1,6 @@
 package data;
 
 import data.entities.News;
-import controller.Controller;
 import data.threads.GetDataThread;
 import utils.FileMode;
 import utils.Period;
@@ -9,10 +8,7 @@ import utils.SortMode;
 
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.logging.Logger;
-import java.util.regex.Pattern;
 
 /**
  * Created by Diana on 27.06.2017.

@@ -2,7 +2,6 @@ package controller;
 
 import data.Data;
 import data.entities.News;
-import data.threads.GetDataThread;
 import ui.UI;
 import utils.FileMode;
 import utils.Period;
