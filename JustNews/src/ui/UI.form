@@ -24,13 +24,14 @@
         <children>
           <component id="f0ed1" class="javax.swing.JTextArea" binding="errorLabel">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="2" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <background color="-1513240"/>
               <foreground color="-1568990"/>
               <inheritsPopupMenu value="false"/>
               <lineWrap value="true"/>
+              <opaque value="false"/>
               <text value="Для вывода ошибок"/>
               <toolTipText value=""/>
               <visible value="false"/>

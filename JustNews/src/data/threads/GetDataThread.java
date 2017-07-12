@@ -6,12 +6,14 @@ import controller.Controller;
 import data.parsers.JSONParser;
 import data.parsers.Parser;
 import data.parsers.XMLParser;
+import utils.Period;
 
 import javax.swing.*;
 import javax.xml.ws.http.HTTPException;
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,16 +36,20 @@ public class GetDataThread extends Thread {
     private final Controller.FileMode fileMode;
     private final Runnable completionHandler;
     private final Runnable errorHandler;
+    private SortMode currentSortMode;
+    private Period currentPeriod;
 
     // result
     private ArrayList<News> newsList;
 
     private String errorMessage = "Unknown error";
 
-    public GetDataThread(Controller.FileMode fileMode, Runnable completionHandler, Runnable errorHandler) {
+    public GetDataThread(Controller.FileMode fileMode, Runnable completionHandler, Runnable errorHandler, SortMode currentSortMode, Period currentPeriod) {
         this.fileMode = fileMode;
         this.completionHandler = completionHandler;
         this.errorHandler = errorHandler;
+        this.currentSortMode = currentSortMode;
+        this.currentPeriod = currentPeriod;
     }
 
     @Override
@@ -59,6 +65,14 @@ public class GetDataThread extends Thread {
 
             // parse
             parseFile();
+
+            // filter by date
+            if (null != currentPeriod) News.filter(newsList, currentPeriod);
+
+            // get comparator
+            Comparator<News> comparator = (SortMode.KEYS_MODE == currentSortMode) ? News.keysComparator : News.dateComparator;
+            // return sorted list (by date by default)
+            newsList.sort(comparator);
 
             SwingUtilities.invokeLater(completionHandler);
         } catch (HTTPException | IOException e) {
@@ -168,5 +182,9 @@ public class GetDataThread extends Thread {
 
     public String getErrorMessage() {
         return errorMessage;
+    }
+
+    public enum SortMode {
+        DATE_MODE, KEYS_MODE;
     }
 }

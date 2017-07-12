@@ -2,6 +2,7 @@ package controller;
 
 import data.Data;
 import data.entities.News;
+import data.threads.GetDataThread;
 import ui.UI;
 import utils.Period;
 
@@ -16,15 +17,11 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
     private UI ui;
     private Data data;
     private FileMode currentFileMode = FileMode.JSON_MODE; // by default
-    private SortMode currentSortMode = SortMode.DATE_MODE; // by default
+    private GetDataThread.SortMode currentSortMode = GetDataThread.SortMode.DATE_MODE; // by default
     private Period currentPeriod;
 
     public enum FileMode {
         JSON_MODE, XML_MODE;
-    }
-
-    public enum SortMode {
-        DATE_MODE, KEYS_MODE;
     }
 
     private Controller() {
@@ -75,12 +72,12 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
 
     @Override
     public void onSortByDateSelected() {
-        currentSortMode = SortMode.DATE_MODE;
+        currentSortMode = GetDataThread.SortMode.DATE_MODE;
     }
 
     @Override
     public void onSortByKeysSelected() {
-        currentSortMode = SortMode.KEYS_MODE;
+        currentSortMode = GetDataThread.SortMode.KEYS_MODE;
     }
 
     @Override

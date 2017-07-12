@@ -178,6 +178,9 @@ public class UI {
     }
 
     public void displayData(ArrayList<News> jsonList) {
+        if (jsonList.isEmpty()) {
+            displayError("Nothing to show");
+        }
 
         DefaultListModel<News> model = new DefaultListModel<>();
         for(News val : jsonList)

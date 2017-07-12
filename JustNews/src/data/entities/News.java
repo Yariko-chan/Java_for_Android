@@ -1,8 +1,12 @@
 package data.entities;
 
+import utils.Period;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 /**
  * Created by Diana on 29.06.2017.
@@ -82,5 +86,45 @@ public class News {
 
     public void setVisible(boolean visible) {
         this.visible = visible;
+    }
+
+    // in title, description or keys
+    public static void filter(ArrayList<News> result, String query) {
+        // create regular expression from query
+        // to find all words with 0..any count of symbols
+        // before, after and between them
+        String[] words = query.split(" ");
+        String anySymbols = "(.|\n)*";
+        String caseInsensive = "(?i)";
+        StringBuilder builder =  new StringBuilder();
+        for (int i = 0; i < words.length - 1; i++) {
+            builder.append("(").append(anySymbols).append("").append(caseInsensive).append(words[i]).append(anySymbols).append(")");
+            builder.append("||");
+        }
+        // append last word without ||
+        builder.append("(").append(anySymbols).append(caseInsensive).append(words[words.length - 1]).append(anySymbols).append(")");
+        Pattern pattern = Pattern.compile(builder.toString());
+
+        // remove News from list if
+        // it's description, title and keys doesn't contain query
+        result.removeIf(n -> // predicate
+                !(
+                        pattern.matcher(n.getTitle()).matches()
+                                || pattern.matcher(n.getDescription()).matches()
+                                || pattern.matcher(Arrays.toString(n.getKeywords())).matches() // convert String[] keys to one String
+                )
+        );
+        result.trimToSize();
+    }
+
+    // delete all News,
+    // which isn't inside period
+    public static void filter(ArrayList<News> result, Period period) {
+        result.removeIf(n -> // predicate
+                (
+                        !period.isDateInside(n.getDate())
+                )
+        );
+        result.trimToSize();
     }
 }

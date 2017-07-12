@@ -4,7 +4,8 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
- * Period consists of two dates.
+ * Period consists of two dates
+ * from date is always before to date
  */
 public class Period {
     private Date fromDate;
