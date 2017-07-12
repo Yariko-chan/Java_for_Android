@@ -6,7 +6,9 @@ import controller.Controller;
 import data.parsers.JSONParser;
 import data.parsers.Parser;
 import data.parsers.XMLParser;
+import utils.FileMode;
 import utils.Period;
+import utils.SortMode;
 
 import javax.swing.*;
 import javax.xml.ws.http.HTTPException;
@@ -33,7 +35,7 @@ public class GetDataThread extends Thread {
     private static Logger log = Logger.getLogger(GetDataThread.class.getName());
 
     // JSON or XML
-    private final Controller.FileMode fileMode;
+    private final FileMode fileMode;
     private final Runnable completionHandler;
     private final Runnable errorHandler;
     private SortMode currentSortMode;
@@ -44,20 +46,32 @@ public class GetDataThread extends Thread {
 
     private String errorMessage = "Unknown error";
 
-    public GetDataThread(Controller.FileMode fileMode, Runnable completionHandler, Runnable errorHandler, SortMode currentSortMode, Period currentPeriod) {
+    public GetDataThread(FileMode fileMode, Runnable completionHandler, Runnable errorHandler) {
         this.fileMode = fileMode;
         this.completionHandler = completionHandler;
         this.errorHandler = errorHandler;
+    }
+
+    // not necessary field
+    public void setCurrentSortMode(SortMode currentSortMode) {
         this.currentSortMode = currentSortMode;
+    }
+
+    // not necessary field
+    public void setCurrentPeriod(Period currentPeriod) {
         this.currentPeriod = currentPeriod;
+    }
+
+    public class Builder {
+
     }
 
     @Override
     public void run() {
 
         // select link and file name
-        String link = (fileMode == Controller.FileMode.JSON_MODE) ? JSON_LINK : XML_LINK;
-        String fileName = (fileMode == Controller.FileMode.JSON_MODE) ? JSON_FILE_NAME : XML_FILE_NAME;
+        String link = (fileMode == FileMode.JSON_MODE) ? JSON_LINK : XML_LINK;
+        String fileName = (fileMode == FileMode.JSON_MODE) ? JSON_FILE_NAME : XML_FILE_NAME;
 
         try {
             // download file
@@ -70,8 +84,10 @@ public class GetDataThread extends Thread {
             if (null != currentPeriod) News.filter(newsList, currentPeriod);
 
             // get comparator
-            Comparator<News> comparator = (SortMode.KEYS_MODE == currentSortMode) ? News.keysComparator : News.dateComparator;
-            // return sorted list (by date by default)
+            Comparator<News> comparator = (SortMode.KEYS_MODE == currentSortMode)
+                    ? News.keysComparator
+                    : News.dateComparator; // date by default
+            // return sorted list
             newsList.sort(comparator);
 
             SwingUtilities.invokeLater(completionHandler);
@@ -160,8 +176,8 @@ public class GetDataThread extends Thread {
 
     private void parseFile()  throws IOException{
         // select file and parser
-        Parser parser = (fileMode == Controller.FileMode.JSON_MODE) ? new JSONParser() : new XMLParser();
-        String fileName = (fileMode == Controller.FileMode.JSON_MODE) ? JSON_FILE_NAME : XML_FILE_NAME;
+        Parser parser = (fileMode == FileMode.JSON_MODE) ? new JSONParser() : new XMLParser();
+        String fileName = (fileMode == FileMode.JSON_MODE) ? JSON_FILE_NAME : XML_FILE_NAME;
 
         // parse
         Root root = null; // all file
@@ -182,9 +198,5 @@ public class GetDataThread extends Thread {
 
     public String getErrorMessage() {
         return errorMessage;
-    }
-
-    public enum SortMode {
-        DATE_MODE, KEYS_MODE;
     }
 }

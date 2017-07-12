@@ -3,7 +3,9 @@ package data;
 import data.entities.News;
 import controller.Controller;
 import data.threads.GetDataThread;
+import utils.FileMode;
 import utils.Period;
+import utils.SortMode;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -29,8 +31,10 @@ public class Data {
         this.dataErrorsListener = dataErrorsListener;
     }
 
-    public void downloadData(Controller.FileMode fileMode, GetDataThread.SortMode currentSortMode, Period currentPeriod) {
-        getDataThread = new GetDataThread(fileMode, completionHandler, errorHandler, currentSortMode, currentPeriod);
+    public void downloadData(FileMode fileMode, SortMode sortMode, Period period) {
+        getDataThread = new GetDataThread(fileMode, completionHandler, errorHandler);
+        getDataThread.setCurrentSortMode(sortMode);
+        getDataThread.setCurrentPeriod(period);
         getDataThread.start();
     }
 

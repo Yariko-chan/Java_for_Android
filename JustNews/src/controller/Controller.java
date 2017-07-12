@@ -4,7 +4,9 @@ import data.Data;
 import data.entities.News;
 import data.threads.GetDataThread;
 import ui.UI;
+import utils.FileMode;
 import utils.Period;
+import utils.SortMode;
 
 import java.util.ArrayList;
 
@@ -17,12 +19,9 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
     private UI ui;
     private Data data;
     private FileMode currentFileMode = FileMode.JSON_MODE; // by default
-    private GetDataThread.SortMode currentSortMode = GetDataThread.SortMode.DATE_MODE; // by default
+    private SortMode currentSortMode = SortMode.DATE_MODE; // by default
     private Period currentPeriod;
 
-    public enum FileMode {
-        JSON_MODE, XML_MODE;
-    }
 
     private Controller() {
     }
@@ -72,12 +71,12 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
 
     @Override
     public void onSortByDateSelected() {
-        currentSortMode = GetDataThread.SortMode.DATE_MODE;
+        currentSortMode = SortMode.DATE_MODE;
     }
 
     @Override
     public void onSortByKeysSelected() {
-        currentSortMode = GetDataThread.SortMode.KEYS_MODE;
+        currentSortMode = SortMode.KEYS_MODE;
     }
 
     @Override
