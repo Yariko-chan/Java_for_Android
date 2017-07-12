@@ -3,6 +3,7 @@ package data;
 import data.entities.News;
 import controller.Controller;
 import data.threads.GetDataThread;
+import utils.Period;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class Data {
     private final OnDataErrorsListener dataErrorsListener;
 
     private Controller.SortMode currentSortMode;
+    private Period currentPeriod;
     private GetDataThread getDataThread;
     private ArrayList<News> newsList;
 
@@ -29,9 +31,10 @@ public class Data {
         this.dataErrorsListener = dataErrorsListener;
     }
 
-    public void downloadData(Controller.FileMode fileMode, Controller.SortMode currentSortMode) {
+    public void downloadData(Controller.FileMode fileMode, Controller.SortMode currentSortMode, Period currentPeriod) {
         getDataThread = new GetDataThread(fileMode, completionHandler, errorHandler);
         this.currentSortMode = currentSortMode;
+        this.currentPeriod = currentPeriod;
         getDataThread.start();
     }
 
@@ -43,7 +46,7 @@ public class Data {
 
             // check thread is not null
             if (null == getDataThread) {
-                dataErrorsListener.onDataError("Внутренняя ошибка: getDataThread is null");
+                dataErrorsListener.onDataError("Internal error: getDataThread is null");
                 return;
             }
 
@@ -52,15 +55,16 @@ public class Data {
 
             // check data not null
             if (null == newsList) {
-                dataErrorsListener.onDataError("Внутренняя ошибка: newsList is null");
+                dataErrorsListener.onDataError("Internal error: newsList is null");
             } else {
                 // return sorted list (by date by default)
 
                 // get comparator
                 Comparator<News> comparator = (Controller.SortMode.KEYS_MODE == currentSortMode) ? News.keysComparator : News.dateComparator;
 
-                // sort in other thread (can be long)
+                // filter by date and sort in other thread (can be long)
                 new Thread(() -> { // lambda expr for Runnable
+                    if (null != currentPeriod) filter(newsList, currentPeriod);
                     newsList.sort(comparator);
 
                     // return to main thread and transfer data to controller
@@ -101,7 +105,7 @@ public class Data {
             // delete all News,
             // which doesn'contain any word from query
             // in title, description or keys
-            filter(query, result);
+            filter(result, query);
 
             // return to main thread and transfer data to controller
             SwingUtilities.invokeLater(() -> { // lambda expr for Runnable
@@ -111,9 +115,9 @@ public class Data {
     }
 
     // delete all News,
-    // which doesn'contain any word from query
+    // which doesn't contain any word from query
     // in title, description or keys
-    private void filter(String query, ArrayList<News> result) {
+    private void filter(ArrayList<News> result, String query) {
         // create regular expression from query
         // to find all words with 0..any count of symbols
         // before, after and between them
@@ -136,6 +140,17 @@ public class Data {
                         pattern.matcher(n.getTitle()).matches()
                         || pattern.matcher(n.getDescription()).matches()
                         || pattern.matcher(Arrays.toString(n.getKeywords())).matches() // convert String[] keys to one String
+                )
+        );
+        result.trimToSize();
+    }
+
+    // delete all News,
+    // which isn't inside period
+    private void filter(ArrayList<News> result, Period period) {
+        result.removeIf(n -> // predicate
+                (
+                        !period.isDateInside(n.getDate())
                 )
         );
         result.trimToSize();

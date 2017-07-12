@@ -22,6 +22,13 @@ public class Period {
         return toDate;
     }
 
+    public boolean isDateInside(Date date) {
+        if (date.after(fromDate) && date.before(toDate)) {
+            return true;
+        }
+        return false;
+    }
+
     public static PeriodBuilder newBuilder() {
         return new Period().new PeriodBuilder();
     }

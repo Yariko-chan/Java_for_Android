@@ -3,6 +3,7 @@ package controller;
 import data.Data;
 import data.entities.News;
 import ui.UI;
+import utils.Period;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,7 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
     private Data data;
     private FileMode currentFileMode = FileMode.JSON_MODE; // by default
     private SortMode currentSortMode = SortMode.DATE_MODE; // by default
+    private Period currentPeriod;
 
     public enum FileMode {
         JSON_MODE, XML_MODE;
@@ -39,7 +41,7 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
         ui = UI.getUI(this);
 
         data = new Data(this, this);
-        data.downloadData(currentFileMode, currentSortMode);
+        data.downloadData(currentFileMode, currentSortMode, currentPeriod);
     }
 
     //reactions for Data
@@ -58,7 +60,7 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
 
     @Override
     public void onRefreshBtnPressed() {
-        data.downloadData(currentFileMode, currentSortMode);
+        data.downloadData(currentFileMode, currentSortMode, currentPeriod);
     }
 
     @Override
@@ -84,5 +86,10 @@ public class Controller implements Data.OnDataChangesListener, Data.OnDataErrors
     @Override
     public void onSearchBtnPressed(String query) {
         data.search(query);
+    }
+
+    @Override
+    public void onPeriodSelected(Period period) {
+        this.currentPeriod = period;
     }
 }

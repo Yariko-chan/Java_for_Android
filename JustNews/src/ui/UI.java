@@ -150,6 +150,25 @@ public class UI {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 for (OnUIActionListener listener: listeners) {
+                    // if datePickers was filled by hands and Enter wasn't pressed at the end
+                    // then selectPeriodListener doesn't catch new period
+                    // so should check it here
+                    if (fromDateField.isEnabled() || toDateField.isEnabled()) {
+                        Date from = fromDateField.getDate();
+                        Date to = toDateField.getDate();
+
+                        try {
+                            Period period = Period.newBuilder()
+                                    .setFromDate(from)
+                                    .setToDate(to)
+                                    .build();
+                            listener.onPeriodSelected(period);
+                        } catch (Period.IncorrectPeriodException e) {
+                            displayError(e.getMessage());
+                            listener.onPeriodSelected(null); // null Period will not filter news
+                        }
+                    }
+
                     errorLabel.setVisible(false);
                     listener.onRefreshBtnPressed();
                     refreshButton.setEnabled(false);
@@ -187,6 +206,10 @@ public class UI {
             Date to = new Date();
             switch (actionEvent.getActionCommand()) {
                 case "all": {
+                    disableDatePickers();
+
+                    from = null;
+                    to = null;
                     break;
                 } case "for a day": {
                     disableDatePickers();
@@ -219,7 +242,10 @@ public class UI {
                     from = fromDateField.getDate();
                     to = toDateField.getDate();
                 }
-                default: break;
+                default:
+                    from = null;
+                    to = null;
+                    break;
             }
 
             try {
@@ -227,8 +253,13 @@ public class UI {
                         .setFromDate(from)
                         .setToDate(to)
                         .build();
+                for (OnUIActionListener listener: listeners) {
+                    listener.onPeriodSelected(period);
+                }
             } catch (Period.IncorrectPeriodException e) {
-                displayError(e.getMessage());
+                for (OnUIActionListener listener: listeners) {
+                    listener.onPeriodSelected(null); // null Period will not filter news
+                }
             }
         }
 
@@ -254,5 +285,7 @@ public class UI {
         void onSortByKeysSelected();
 
         void onSearchBtnPressed(String query);
+
+        void onPeriodSelected(Period period);
     }
 }
