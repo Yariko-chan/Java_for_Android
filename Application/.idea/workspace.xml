@@ -2,10 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="893eb7cc-1af7-4270-82fb-edfbeba8439b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/NewsRenderer.class" afterPath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/NewsRenderer.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/entities/News$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/entities/News$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/entities/News.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/entities/Root.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/Controller$FileMode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/Controller$SortMode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/Controller.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/Data$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/Data$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/Data$OnDataChangesListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/Data$OnDataErrorsListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/Data.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/ui/NewsRenderer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/ui/UI$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/ui/UI$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/ui/UI$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/ui/UI$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/ui/UI$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/ui/UI$6.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/ui/UI$OnUIActionListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/main/ui/UI.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/parsers/JSONParser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/parsers/Parser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/parsers/XMLParser.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/threads/GetDataThread.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/test/JustNews/com/intellij/uiDesigner/core/AbstractLayout.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/test/JustNews/com/intellij/uiDesigner/core/DimensionInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/test/JustNews/com/intellij/uiDesigner/core/GridConstraints.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/test/JustNews/com/intellij/uiDesigner/core/GridLayoutManager.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/test/JustNews/com/intellij/uiDesigner/core/HorizontalInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/test/JustNews/com/intellij/uiDesigner/core/LayoutState.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/test/JustNews/com/intellij/uiDesigner/core/Spacer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/test/JustNews/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/test/JustNews/com/intellij/uiDesigner/core/SupportCode.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/test/JustNews/com/intellij/uiDesigner/core/Util.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/out/test/JustNews/com/intellij/uiDesigner/core/VerticalInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/entities/News.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/entities/Root.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/main/Controller.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/main/Data.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/main/ui/NewsRenderer.form" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/main/ui/NewsRenderer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/main/ui/UI.form" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/main/ui/UI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/parsers/JSONParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/parsers/Parser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/parsers/XMLParser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../JustNews/src/threads/GetDataThread.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/patterns/builder/Student$Builder.class" afterPath="$PROJECT_DIR$/out/production/Application/patterns/builder/Student$Builder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/patterns/builder/Student.class" afterPath="$PROJECT_DIR$/out/production/Application/patterns/builder/Student.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/patterns/singletone/Controller.class" afterPath="$PROJECT_DIR$/out/production/Application/patterns/singletone/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/patterns/singletone/View.class" afterPath="$PROJECT_DIR$/out/production/Application/patterns/singletone/View.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Application/regular_expressions/Main.class" afterPath="$PROJECT_DIR$/out/production/Application/regular_expressions/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JustNews/out/production/JustNews/Main.class" afterPath="$PROJECT_DIR$/../JustNews/out/production/JustNews/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/typization/Main.java" afterPath="$PROJECT_DIR$/src/typization/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JustNews/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../JustNews/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JustNews/src/main/NewsRenderer.form" afterPath="$PROJECT_DIR$/../JustNews/src/main/NewsRenderer.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JustNews/src/main/NewsRenderer.java" afterPath="$PROJECT_DIR$/../JustNews/src/main/NewsRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JustNews/src/Main.java" afterPath="$PROJECT_DIR$/../JustNews/src/Main.java" />
     </list>
     <ignored path="Application.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,17 +85,56 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="42" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/patterns/singletone/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="629">
               <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/typization/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="72" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/regular_expressions/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MethodTypization.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/typization/MethodTypization.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding>
+                <element signature="e#138#139#0" expanded="false" />
+                <element signature="e#200#201#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -67,7 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/figures/Main.java" />
         <option value="$PROJECT_DIR$/src/interfaces/OnClickListener.java" />
         <option value="$PROJECT_DIR$/src/interfaces/Button.java" />
         <option value="$PROJECT_DIR$/src/interfaces/OnToggleListener.java" />
@@ -118,6 +210,7 @@
         <option value="$PROJECT_DIR$/src/reflection/Main.java" />
         <option value="$PROJECT_DIR$/src/multithreading/synch2/Main.java" />
         <option value="$PROJECT_DIR$/src/typization/MethodTypization.java" />
+        <option value="$PROJECT_DIR$/src/typization/Main.java" />
       </list>
     </option>
   </component>
@@ -145,9 +238,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -224,33 +314,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="typization" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="homework3006" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="patterns" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="singletone" />
+              <option name="myItemId" value="regular_expressions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -274,6 +338,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -317,27 +384,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
-    <configuration default="false" name="MainHashSet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="collections.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="collections.MainHashSet" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="Application" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="HttpConnectionEstablishing" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -406,6 +453,26 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="regular_expressions.Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="Application" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="typization.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="typization.Main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -623,19 +690,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.MainHashSet" />
-      <item index="1" class="java.lang.String" itemvalue="Application.HttpConnectionEstablishing" />
-      <item index="2" class="java.lang.String" itemvalue="Application.XmlDomParsing" />
-      <item index="3" class="java.lang.String" itemvalue="Application.JSONParsing" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="0" class="java.lang.String" itemvalue="Application.HttpConnectionEstablishing" />
+      <item index="1" class="java.lang.String" itemvalue="Application.XmlDomParsing" />
+      <item index="2" class="java.lang.String" itemvalue="Application.JSONParsing" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Application.JSONParsing" />
-        <item index="2" class="java.lang.String" itemvalue="Application.XmlDomParsing" />
-        <item index="3" class="java.lang.String" itemvalue="Application.HttpConnectionEstablishing" />
-        <item index="4" class="java.lang.String" itemvalue="Application.MainHashSet" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Application.JSONParsing" />
+        <item index="3" class="java.lang.String" itemvalue="Application.XmlDomParsing" />
+        <item index="4" class="java.lang.String" itemvalue="Application.HttpConnectionEstablishing" />
       </list>
     </recent_temporary>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -699,7 +766,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -717,12 +784,12 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298731" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34168443" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17004265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3539823" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35326087" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -752,7 +819,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="52" />
+      <option name="time" value="53" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -765,7 +832,115 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/patterns/singletone/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/regular_expressions/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/typization/MethodTypization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="e#138#139#0" expanded="false" />
+            <element signature="e#200#201#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/typization/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="72" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reflection/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/patterns/singletone/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/typization/MethodTypization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="e#138#139#0" expanded="false" />
+            <element signature="e#200#201#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/typization/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reflection/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/patterns/singletone/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reflection/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -781,7 +956,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -797,7 +974,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -813,7 +992,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -880,25 +1061,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/typization/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/typization/MethodTypization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/reflection/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="18" selection-end-column="42" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -907,6 +1076,37 @@
         <state relative-caret-position="629">
           <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/typization/MethodTypization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="e#138#139#0" expanded="false" />
+            <element signature="e#200#201#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/regular_expressions/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/typization/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="72" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
