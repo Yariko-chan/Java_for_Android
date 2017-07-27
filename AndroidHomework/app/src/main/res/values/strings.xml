@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Homework</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="exchange">Поменять!</string>
+    <string name="down_button">Нижняя</string>
+    <string name="upper_button">Верхняя</string>
 </resources>
