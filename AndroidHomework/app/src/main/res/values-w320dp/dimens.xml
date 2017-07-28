@@ -1,6 +1,5 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-
     <!--Homework 2-->
     <dimen name="flag_height">213dp</dimen> <!--2:3-->
     <dimen name="poland_flag_height">200dp</dimen> <!--5:8-->

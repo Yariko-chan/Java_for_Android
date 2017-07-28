@@ -1,0 +1,6 @@
+<resources>
+    <!--Homework 2-->
+    <dimen name="flag_height">1280dp</dimen> <!--2:3-->
+    <dimen name="poland_flag_height">1200dp</dimen> <!--5:8-->
+    <dimen name="denmark_flag_height">1453dp</dimen> <!--28:37-->
+</resources>

@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- lesson 2 -->
+    <color name="poland_red">#D4213D</color>
+    <color name="poland_white">#E9E8E7</color>
+    <color name="italia_green">#009246</color>
+    <color name="italia_white">#F1F2F1</color>
+    <color name="italia_red">#CE2B37</color>
+    <color name="columbia_blue">#003893</color>
+    <color name="columbia_red">#CE1126</color>
+    <color name="columbia_yellow">#FCD116</color>
 </resources>
