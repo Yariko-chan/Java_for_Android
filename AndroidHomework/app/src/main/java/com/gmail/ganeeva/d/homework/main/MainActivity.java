@@ -15,6 +15,7 @@ import android.widget.ListView;
 import com.gmail.ganeeva.d.homework.R;
 import com.gmail.ganeeva.d.homework.lesson1.Lesson1MainActivity;
 import com.gmail.ganeeva.d.homework.lesson2.Lesson2MainActivity;
+import com.gmail.ganeeva.d.homework.lesson3.Lesson3MainActivity;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout layout;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         addButton(1, Lesson1MainActivity.class);
         addButton(2, Lesson2MainActivity.class);
+        addButton(3, Lesson3MainActivity.class);
     }
 
     private void addButton(int number, final Class mainActivity) {

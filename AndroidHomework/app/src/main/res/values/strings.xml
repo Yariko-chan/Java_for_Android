@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Homework</string>
     <string name="title_activity_main">MainActivity</string>
+
+    <!--Homework 1-->
     <string name="exchange">Поменять!</string>
     <string name="down_button">Нижняя</string>
     <string name="upper_button">Верхняя</string>
+
+    <!--Homework 3-->
+    <string name="hint_url_of_image">Enter url of image...</string>
+    <string name="download_image">Get it!</string>
 </resources>
