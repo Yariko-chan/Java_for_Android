@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import com.bumptech.glide.request.RequestOptions;
 import com.gmail.ganeeva.d.homework.BuildConfig;
 import com.gmail.ganeeva.d.homework.R;
 
@@ -31,7 +32,10 @@ public class Lesson3MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String url = urlEditText.getText().toString();
-                Glide.with(Lesson3MainActivity.this).load(url).into(imageView);
+                Glide.with(Lesson3MainActivity.this)
+                    .load(url)
+                    .apply(RequestOptions.circleCropTransform())
+                    .into(imageView);
             }
         });
 

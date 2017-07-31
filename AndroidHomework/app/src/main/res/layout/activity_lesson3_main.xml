@@ -6,8 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.gmail.ganeeva.d.homework.lesson3.Lesson3MainActivity"
-    android:weightSum="22">
+    android:padding="5dp"
+    android:weightSum="22"
+    tools:context="com.gmail.ganeeva.d.homework.lesson3.Lesson3MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
