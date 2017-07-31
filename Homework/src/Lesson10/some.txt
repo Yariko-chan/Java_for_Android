@@ -1,4 +1,0 @@
-Savchik|29|false
-Mitnik|80|true
-Storojev|31|true
-Lipnickaya|30|false
