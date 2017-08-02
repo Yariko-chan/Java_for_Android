@@ -20,7 +20,22 @@
         <activity android:name=".lesson1.Lesson1DisplayActivity" />
         <activity android:name=".lesson3.Lesson3MainActivity" />
         <activity android:name=".lesson4.Lesson4MainActivity" />
-        <activity android:name=".lesson4.Lesson4SecondActivity" />
+        <activity android:name=".lesson5.Lesson5MainActivity"/>
+
+        <!--<receiver android:name=".lesson5.MyBroadcastReceiver">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>-->
+                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>-->
+                <!--<action android:name="android.intent.action.AIRPLANE_MODE"></action>-->
+
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <service android:name=".lesson5.MyService"/>
+        <service android:name=".lesson5.MyIntentService"/>
     </application>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>
