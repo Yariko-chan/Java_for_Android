@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Android Classwork</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Lesson 2 -->
+    <string name="emailField">email</string>
+    <string name="passwordField">password</string>
+    <string name="loginButton">Login</string>
+</resources>

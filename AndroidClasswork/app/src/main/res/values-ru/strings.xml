@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NewApp</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Lesson 2 -->
+    <string name="emailField">имейл</string>
+    <string name="passwordField">пароль</string>
+    <string name="loginButton">Войти</string>
+</resources>
