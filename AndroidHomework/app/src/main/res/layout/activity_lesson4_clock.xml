@@ -8,4 +8,10 @@
     android:orientation="vertical"
     tools:context="com.gmail.ganeeva.d.homework.lesson4.Lesson4ClockActivity">
 
+    <ImageView
+        android:id="@+id/owl_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/lesson4_owl_animated"/>
+
 </LinearLayout>

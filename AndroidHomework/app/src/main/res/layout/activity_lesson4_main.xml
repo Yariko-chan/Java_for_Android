@@ -12,7 +12,7 @@
         android:id="@+id/magicButton"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/round_button"
+        android:background="@drawable/lesson4_round_button"
         android:text="Magic button"
         android:layout_marginBottom="20dp"/>
 
@@ -21,6 +21,5 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:text="Regular button"
-        android:background="@drawable/round_button"
         android:layout_marginTop="20dp"/>
 </LinearLayout>
