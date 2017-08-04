@@ -16,8 +16,8 @@ public class MyIntentService extends IntentService {
     public static final String KEY_ACTION = "KEY_ACTION";
     public static final String MY_ACTION = "com.example.diana.androidclasswork.lesson5.MY_ACTION"; // name of event in BR
 
-    public MyIntentService(String name) {
-        super(name);
+    public MyIntentService() {
+        super("MyIntentService");
     }
 
     @Override

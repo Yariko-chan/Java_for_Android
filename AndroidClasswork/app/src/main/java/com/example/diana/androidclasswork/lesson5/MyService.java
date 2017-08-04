@@ -14,6 +14,9 @@ import android.util.Log;
 public class MyService extends Service {
     public static final String TAG = MyService.class.getSimpleName();
 
+    public MyService() {
+    }
+
     @Override
     public void onCreate() {
         super.onCreate();

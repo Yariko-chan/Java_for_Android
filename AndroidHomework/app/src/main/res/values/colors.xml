@@ -13,4 +13,5 @@
     <color name="columbia_blue">#003893</color>
     <color name="columbia_red">#CE1126</color>
     <color name="columbia_yellow">#FCD116</color>
+    <color name="transparent_white">#CCFFFFFF</color>
 </resources>

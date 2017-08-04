@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void addButton(int number, final Class mainActivity) {
         Button hw1Button = new Button(this);
-        hw1Button.setText("Homework " + number);
+        hw1Button.setText("Classwork " + number);
         hw1Button.setLayoutParams(
                 new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.WRAP_CONTENT));
