@@ -64,8 +64,6 @@ public class Lesson5MainActivity extends AppCompatActivity {
 
         registerReceiver(receiver, filter);
 
-        ///////////////////////////////
-
         Intent intent = new Intent(this, MyService.class);
         bindService(intent, conn, BIND_AUTO_CREATE); // flags - how to launch service depending on launched already or not
     }
@@ -74,8 +72,6 @@ public class Lesson5MainActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         unregisterReceiver(receiver);
-
-        /////////////
 
         unbindService(conn);
     }
