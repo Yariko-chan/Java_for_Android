@@ -8,10 +8,13 @@ import android.graphics.Rect;
 import android.icu.util.Calendar;
 import android.icu.util.GregorianCalendar;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 import com.gmail.ganeeva.d.homework.R;
@@ -30,12 +33,12 @@ public class Lesson4ClockView extends View {
     private static final int NUMBERS_PAINT_WIDTH = 10;
     private static final int NUMBERS_WIDTH = 60;
     private static final int NUMBERS_SIZE = 100;
-    private static final int HOURS_ARROW_WIDTH = 20;
-    private static final int MIN_ARROW_WIDTH = 10;
+    private static final int HOURS_ARROW_WIDTH = 30;
+    private static final int MIN_ARROW_WIDTH = 15;
     private static final int SEC_ARROW_WIDTH = 5;
-    private static final int HOURS_ARROW_HEIGHT = 100;
-    private static final int MIN_ARROW_HEIGHT = 150;
-    private static final int SEC_ARROW_HEIGHT = 200;
+    private static final int HOURS_ARROW_HEIGHT = 200;
+    private static final int MIN_ARROW_HEIGHT = 260;
+    private static final int SEC_ARROW_HEIGHT = 300;
 
     private Paint paint = new Paint();
     private Paint backgroundPaint = new Paint();
@@ -86,6 +89,8 @@ public class Lesson4ClockView extends View {
         numbersPaint.setStrokeWidth(NUMBERS_PAINT_WIDTH);
         numbersPaint.setStyle(Paint.Style.FILL);
         numbersPaint.setTextSize(NUMBERS_SIZE);
+
+        updateClockRunnable.run();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -103,7 +108,7 @@ public class Lesson4ClockView extends View {
         int oneClockDegree = 360/60;
         for (int i = 0; i < 60; i++) { // thin degrees
             canvas.rotate(oneClockDegree, centerX, centerY);
-            if ((i+1)%15 == 0 || i%15 == 0 || (i+2)%15 == 0) continue; // place for number
+            if (i%15 == 0 || (i+1)%15 == 0 || (i+2)%15 == 0) continue; // place for number
             canvas.drawLine(centerX, centerY - radius,
                         centerX, centerY - radius + THIN_DEGREE_HEIGHT, thinDegreePaint);
         }
@@ -133,13 +138,49 @@ public class Lesson4ClockView extends View {
         int hour = calendar.get(Calendar.HOUR);
         int min = calendar.get(Calendar.MINUTE);
         int sec = calendar.get(Calendar.SECOND);
+        canvas.drawCircle(centerX, centerY, HOURS_ARROW_WIDTH/2, paint);
 
-        double angle = 0;//(360/12)*hour * Math.PI / 180;
-        int endX   = (int) (centerX + HOURS_ARROW_HEIGHT * Math.sin(angle));
-        int endY   = (int) (centerY + HOURS_ARROW_HEIGHT * Math.cos(angle));
+        // HOUR ARROW
+        // 6 - to make 12h align on 12 hours (on 6 without it)
+        double degreeAngle = (360/12)*(hour + (double) min/60 + 6);
+        // "-" - to make arrow go clockwise (counter-cw by default)
+        double radianAngle = - Math.toRadians(degreeAngle);
+        int endX = centerX + (int)(HOURS_ARROW_HEIGHT*Math.sin(radianAngle));
+        int endY = centerY + (int)(HOURS_ARROW_HEIGHT*Math.cos(radianAngle));
         paint.setStrokeWidth(HOURS_ARROW_WIDTH);
         canvas.drawLine(centerX, centerY, endX, endY, paint);
+
+        //MINUTE ARROW
+        // 30 - to make 0min align on 12 hours (on 6 without it)
+        degreeAngle = (360/60)*(min + 30);
+        // "-" - to make arrow go clockwise (counter-cw by default)
+        radianAngle = - Math.toRadians(degreeAngle);
+        endX = centerX + (int)(MIN_ARROW_HEIGHT*Math.sin(radianAngle));
+        endY = centerY + (int)(MIN_ARROW_HEIGHT*Math.cos(radianAngle));
+        paint.setStrokeWidth(MIN_ARROW_WIDTH);
+        canvas.drawLine(centerX, centerY, endX, endY, paint);
+
+        //SECOND ARROW
+        // 30 - to make 0sec align on 12 hours (on 6 without it)
+        degreeAngle = (360/60)*(sec + 30);
+        // "-" - to make arrow go clockwise (counter-cw by default)
+        radianAngle = - Math.toRadians(degreeAngle);
+        endX = centerX + (int)(SEC_ARROW_HEIGHT*Math.sin(radianAngle));
+        endY = centerY + (int)(SEC_ARROW_HEIGHT*Math.cos(radianAngle));
+        paint.setStrokeWidth(SEC_ARROW_WIDTH);
+        canvas.drawLine(centerX, centerY, endX, endY, paint);
+
+        Log.d("updateView", "sec = " + sec);
+        invalidate();
     }
+
+    Handler handler = new Handler(Looper.getMainLooper());
+    Runnable updateClockRunnable = new Runnable(){
+        public void run(){
+            invalidate();
+            handler.postDelayed(this, 1000); // invalidate every second
+        }
+    };
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
