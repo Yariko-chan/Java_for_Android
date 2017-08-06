@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BeOkay</string>
+    <string name="shedule">Shedule</string>
+    <string name="training">Training</string>
+    <string name="diary">Diary</string>
+    <string name="settings">Settings</string>
+</resources>

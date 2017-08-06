@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_shedule"
+        android:enabled="true"
+        android:icon="@drawable/ic_assignment_black_24dp"
+        android:title="@string/shedule"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_training"
+        android:enabled="true"
+        android:icon="@drawable/ic_storage_black_24dp"
+        android:title="@string/training"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_diary"
+        android:enabled="true"
+        android:icon="@drawable/ic_import_contacts_black_24dp"
+        android:title="@string/diary"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/settings"
+        app:showAsAction="ifRoom" />
+</menu>
