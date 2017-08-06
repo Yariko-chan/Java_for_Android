@@ -61,7 +61,6 @@ public class Lesson5MainActivity extends AppCompatActivity {
         IntentFilter filter = new IntentFilter();
         filter.addAction(ConnectivityManager.CONNECTIVITY_ACTION);
         //filter.addAction(MyIntentService.MY_ACTION); // my own event in global BR
-
         registerReceiver(receiver, filter);
 
         Intent intent = new Intent(this, MyService.class);

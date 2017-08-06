@@ -3,6 +3,8 @@
           package="com.gmail.ganeeva.d.homework">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:name=".main.HomeworkApplication"
@@ -24,12 +26,12 @@
         </activity>
         <activity android:name=".lesson1.Lesson1MainActivity"/>
         <activity android:name=".lesson2.Lesson2MainActivity"/>
-        <activity android:name=".lesson3.Lesson3MainActivity">
-        </activity>
-        <activity android:name=".lesson4.Lesson4MainActivity">
-        </activity>
-        <activity android:name=".lesson4.Lesson4ClockActivity">
-        </activity>
+        <activity android:name=".lesson3.Lesson3MainActivity"/>
+        <activity android:name=".lesson4.Lesson4MainActivity"/>
+        <activity android:name=".lesson4.Lesson4ClockActivity"/>
+        <activity android:name=".lesson5.Lesson5MainActivity"/>
+
+        <service android:name=".lesson5.Lesson5Service"/>
     </application>
 
 </manifest>

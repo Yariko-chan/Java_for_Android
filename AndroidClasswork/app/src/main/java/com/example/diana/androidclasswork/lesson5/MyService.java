@@ -31,6 +31,10 @@ public class MyService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+
+        // You must always implement this method;
+        // however, if you don't want to allow binding, you should return null.
+
         return null;
     }
 
@@ -42,13 +46,21 @@ public class MyService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         return super.onStartCommand(intent, flags, startId);
-        // on every startservice (there may by several strts for sungle service
+        // on every startservice (there may by several starts for single service)
         // one service one time
         // but there are may be several different intents in startservice
+
+        // it is your responsibility to stop the service when its work is complete
+        // by calling stopSelf() or stopService().
+        // If you only want to provide binding, you don't need to implement this method.
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+
+        // implement this to clean up any resources
+        // such as threads, registered listeners, or receivers.
+        // This is the last call that the service receives.
     }
 }
