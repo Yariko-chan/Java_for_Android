@@ -2,6 +2,8 @@ package com.gmail.ganeeva.d.homework.lesson6;
 
 import android.content.Context;
 import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -11,8 +13,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.DataSource;
+import com.bumptech.glide.load.engine.GlideException;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.gmail.ganeeva.d.homework.R;
 
 public class Lesson6MainActivity extends AppCompatActivity {
@@ -22,6 +29,7 @@ public class Lesson6MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson6_main);
+
 
         String[] imageUrls = {
             "http://cdn.fishki.net/upload/post/201409/06/1301804/i2dpv50ftpg.jpg",
@@ -52,9 +60,10 @@ public class Lesson6MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(new ImagesAdapter(this, imageUrls));
     }
 
-    private static class ImagesAdapter extends RecyclerView.Adapter<ImageHolder> {
+    private class ImagesAdapter extends RecyclerView.Adapter<ImageHolder> {
         private String[] urls = {};
         private Context context;
+        private ProgressBar pb;
 
         public ImagesAdapter(Context context, String[] urls) {
             this.urls = urls;
@@ -69,9 +78,22 @@ public class Lesson6MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(ImageHolder holder, int position) {
+        public void onBindViewHolder(final ImageHolder holder, int position) {
             Glide.with(context)
                 .load(urls[position])
+                .listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                        holder.progressBar.setVisibility(View.GONE);
+                        holder.imageView.setVisibility(View.VISIBLE);
+                        return false;
+                    }
+                })
                 .into(holder.imageView);
         }
 
@@ -84,11 +106,13 @@ public class Lesson6MainActivity extends AppCompatActivity {
     public static class ImageHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;
+        ProgressBar progressBar;
 
         public ImageHolder(View itemView) {
             super(itemView);
 
             imageView = (ImageView) itemView.findViewById(R.id.image);
+            progressBar = (ProgressBar) itemView.findViewById(R.id.progressBar);
         }
     }
 }
