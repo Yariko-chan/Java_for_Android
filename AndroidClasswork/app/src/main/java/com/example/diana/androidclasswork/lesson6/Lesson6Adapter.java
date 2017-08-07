@@ -18,8 +18,14 @@ import java.util.ArrayList;
 public class Lesson6Adapter extends RecyclerView.Adapter<Lesson6Adapter.Holder> {
     private ArrayList<String> items = new ArrayList<>();
 
+    private OnItemClickListener listener;
+
     public Lesson6Adapter(ArrayList<String> items) {
         this.items = items;
+    }
+
+    public void setListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     @Override
@@ -30,8 +36,20 @@ public class Lesson6Adapter extends RecyclerView.Adapter<Lesson6Adapter.Holder> 
     }
 
     @Override
-    public void onBindViewHolder(Holder holder, int position) {
+    public void onBindViewHolder(Holder holder, final int position) {
         holder.textView.setText(items.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() { // повесили клик!
+            @Override
+            public void onClick(View v) {
+                if (null != listener) {
+                    listener.onItemClick(position);
+                    // here no buiseness logic, because it should be in activity
+                    // only some interface changes in item like checkboxes
+
+                    // clickListener may be on some parts of item, not on whole item
+                }
+            }
+        });
     }
 
     @Override
@@ -50,5 +68,9 @@ public class Lesson6Adapter extends RecyclerView.Adapter<Lesson6Adapter.Holder> 
             imageView = (ImageView) itemView.findViewById(R.id.image);
             textView = (TextView) itemView.findViewById(R.id.textView);
         }
+    }
+
+    interface OnItemClickListener {
+        public void onItemClick(int position);
     }
 }
