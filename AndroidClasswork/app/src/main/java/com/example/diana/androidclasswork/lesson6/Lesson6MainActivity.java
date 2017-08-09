@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.example.diana.androidclasswork.R;
 
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 
 public class Lesson6MainActivity extends AppCompatActivity {
 
+    private static final String TAG = Lesson6MainActivity.class.getSimpleName();
     private ArrayList<String> list = new ArrayList<>();
 
     @Override
@@ -40,6 +42,18 @@ public class Lesson6MainActivity extends AppCompatActivity {
         // StaggeredGridLayout
         // also cutom LayoutManagers
         recyclerView.setLayoutManager(llManager);
-        recyclerView.setAdapter(new Lesson6Adapter(list));
+        Lesson6Adapter adapter = new Lesson6Adapter(list);
+        adapter.setListener(new Lesson6Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                // better solution to track click events
+                // because here able to open new Activity
+                // (in Adapter it would be harder and not elegant)
+                // also not so dependent!
+                Log.d(TAG, "Clicked");
+            }
+        });
+
+        recyclerView.setAdapter(adapter);
     }
 }

@@ -14,6 +14,7 @@ import com.example.diana.androidclasswork.lesson3.Lesson3MainActivity;
 import com.example.diana.androidclasswork.lesson4.Lesson4MainActivity;
 import com.example.diana.androidclasswork.lesson5.Lesson5MainActivity;
 import com.example.diana.androidclasswork.lesson6.Lesson6MainActivity;
+import com.example.diana.androidclasswork.lesson7.Lesson7MainActivity;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout layout;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         layout = (LinearLayout) findViewById(R.id.layout);
 
+        addButton(7, Lesson7MainActivity.class);
         addButton(6, Lesson6MainActivity.class);
         addButton(5, Lesson5MainActivity.class);
         addButton(4, Lesson4MainActivity.class);
