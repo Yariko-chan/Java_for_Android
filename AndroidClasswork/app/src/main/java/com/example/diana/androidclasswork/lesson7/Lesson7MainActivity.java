@@ -10,6 +10,7 @@ import com.example.diana.androidclasswork.databinding.ActivityLesson7MainBinding
 
 public class Lesson7MainActivity extends AppCompatActivity {
     public ObservableField<String> myText = new ObservableField<>("Some text");
+    // will update binded view every time value changed
 
     private Thread thread;
 

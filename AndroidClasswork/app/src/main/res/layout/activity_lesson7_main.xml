@@ -4,6 +4,7 @@
 <!--data binding, tags say that I want to use it with library-->
 
     <data>
+        <!-- import class to use it (textView.visibility) -->
         <import type="android.view.View"/>
 
         <!--here data-->

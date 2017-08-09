@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.gmail.ganeeva.d.homework.lesson7.Lesson7User"/>
+    </data>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|center_horizontal"
+        android:orientation="vertical"
+        android:weightSum="20"
+        android:background="@{user.gender ? @android:color/holo_blue_light : @android:color/holo_red_light}">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:background="@android:color/transparent"
+            app:src="@{user.imageUrl}"/>
+
+        <TextView
+            android:id="@+id/nameFirstLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="@{user.surname + ' ' + user.name}"
+            android:textSize="50sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/nameSecondLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="@{user.patronymic}"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            tools:text="Patronymic"/>
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="@{String.valueOf(user.age)}"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            tools:text="21"/>
+
+    </LinearLayout>
+</layout>
