@@ -1,5 +1,7 @@
 package com.example.diana.androidclasswork.lesson7;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.ObservableField;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +11,7 @@ import com.example.diana.androidclasswork.R;
 import com.example.diana.androidclasswork.databinding.ActivityLesson7MainBinding;
 
 public class Lesson7MainActivity extends AppCompatActivity {
+
     public ObservableField<String> myText = new ObservableField<>("Some text");
     // will update binded view every time value changed
 
