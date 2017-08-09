@@ -56,7 +56,7 @@ public class Lesson6MainActivity extends AppCompatActivity {
         };
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));//new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
+        recyclerView.setLayoutManager(/*new GridLayoutManager(this, 2));*/new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
         recyclerView.setAdapter(new ImagesAdapter(this, imageUrls));
     }
 
