@@ -24,8 +24,9 @@ public class MainActivity extends AppCompatActivity implements
     public static final String TRAINING_FRAGMENT_NAME = TrainingFragment.class.getSimpleName();
     public static final String DIARY_FRAGMENT_NAME = DiaryFragment.class.getSimpleName();
 
-    private
-    BottomNavigationView bottomNavigationView;;
+    private BottomNavigationView bottomNavigationView;;
+
+    private boolean backToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements
         // define your fragments here
         final Fragment scheduleFragment = new ScheduleFragment();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.addToBackStack(ScheduleFragment.class.getSimpleName())
+        fragmentTransaction.addToBackStack(SCHEDULE_FRAGMENT_NAME)
             .replace(R.id.container, scheduleFragment).commit();
 
         bottomNavigationView = (BottomNavigationView)
@@ -82,32 +83,51 @@ public class MainActivity extends AppCompatActivity implements
             });
     }
 
-    /**
-     *  if there are fragments on back stack,
-     *  switch bottomNavigationMenu
-     *  and pop that fragment
-     */
     @Override
     public void onBackPressed() {
         FragmentManager fragmentManager = getFragmentManager();
         int count = fragmentManager.getBackStackEntryCount();
-        if (count > 2) {
-            String fragmentName = fragmentManager.getBackStackEntryAt(count - 2).getName(); // last but one
-//            fragmentManager.popBackStack();
-            if (SCHEDULE_FRAGMENT_NAME.equals(fragmentName)) {
-                bottomNavigationView.setSelectedItemId(R.id.action_schedule);
-            } else if (DIARY_FRAGMENT_NAME.equals(fragmentName)) {
-                bottomNavigationView.setSelectedItemId(R.id.action_diary);
-            } else if (TRAINING_FRAGMENT_NAME.equals(fragmentName)) {
-                bottomNavigationView.setSelectedItemId(R.id.action_training);
+        String fragmentName = fragmentManager.getBackStackEntryAt(count - 1).getName(); // last
+
+        if (fragmentName.equals(SETTINGS_FRAGMENT_NAME)) { // to last one in back stack
+            setSelectedItemFromBackStack(bottomNavigationView, fragmentManager);
+
+        } else if (fragmentName.equals(DIARY_FRAGMENT_NAME) || fragmentName.equals(TRAINING_FRAGMENT_NAME)) { // to shedule
+            fragmentManager.popBackStack(SCHEDULE_FRAGMENT_NAME, FragmentManager.POP_BACK_STACK_INCLUSIVE); // delete current fragment from backstack
+            bottomNavigationView.setSelectedItemId(R.id.action_schedule);
+
+        } else { // (SHEDULE) first ignore(display toast), second close app
+            if (backToExitPressedOnce) {
+//                clearBackstack(fragmentManager);
+//                super.onBackPressed(); // second BACK exits app
+                this.finish();
             } else {
-                bottomNavigationView.setSelectedItemId(R.id.action_settings);
-            }
-            fragmentManager.popBackStack();
-            fragmentManager.popBackStack();
-        } else {
+                Toast.makeText(this, R.string.exit_caution, Toast.LENGTH_SHORT).show();
+                backToExitPressedOnce = true;
+            };
         }
-        super.onBackPressed();
+    }
+
+    private void clearBackstack(FragmentManager fm) {
+        for(int i = 0; i < fm.getBackStackEntryCount(); ++i) {
+            fm.popBackStack();
+        }
+    }
+
+    private void setSelectedItemFromBackStack(BottomNavigationView bottomNavigationView, FragmentManager fragmentManager) {
+        int count = fragmentManager.getBackStackEntryCount();
+        String fragmentName = fragmentManager.getBackStackEntryAt(count - 2).getName(); // last but one
+
+        if (fragmentName.equals(SCHEDULE_FRAGMENT_NAME)) {
+            fragmentManager.popBackStack(SCHEDULE_FRAGMENT_NAME, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            bottomNavigationView.setSelectedItemId(R.id.action_schedule);
+        } else if (fragmentName.equals(DIARY_FRAGMENT_NAME)) {
+            fragmentManager.popBackStack(DIARY_FRAGMENT_NAME, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            bottomNavigationView.setSelectedItemId(R.id.action_diary);
+        } else {
+            fragmentManager.popBackStack(TRAINING_FRAGMENT_NAME, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            bottomNavigationView.setSelectedItemId(R.id.action_training);
+        }
     }
 
     @Override
