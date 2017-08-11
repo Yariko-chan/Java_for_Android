@@ -8,16 +8,16 @@
         android:title="@string/shedule"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_training"
-        android:enabled="true"
-        android:icon="@drawable/ic_storage_black_24dp"
-        android:title="@string/training"
-        app:showAsAction="ifRoom" />
-    <item
         android:id="@+id/action_diary"
         android:enabled="true"
         android:icon="@drawable/ic_import_contacts_black_24dp"
         android:title="@string/diary"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_training"
+        android:enabled="true"
+        android:icon="@drawable/ic_storage_black_24dp"
+        android:title="@string/training"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_settings"
