@@ -4,7 +4,7 @@ package com.example.domain.entity;
  * Created by Diana on 11.08.2017.
  */
 
-public class ProfileId {
+public class ProfileId implements DomainModel{
     private String id;
 
     public String getId() {

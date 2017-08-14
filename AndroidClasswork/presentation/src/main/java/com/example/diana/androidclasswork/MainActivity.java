@@ -3,6 +3,7 @@ package com.example.diana.androidclasswork;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.diana.androidclasswork.lesson1.Lesson1MainActivity;
+import com.example.diana.androidclasswork.lesson10.Lesson10MainActivity;
 import com.example.diana.androidclasswork.lesson3.Lesson3MainActivity;
 import com.example.diana.androidclasswork.lesson4.Lesson4MainActivity;
 import com.example.diana.androidclasswork.lesson5.Lesson5MainActivity;
@@ -18,7 +20,14 @@ import com.example.diana.androidclasswork.lesson7.Lesson7MainActivity;
 import com.example.diana.androidclasswork.lesson8.Lesson8MainActivity;
 import com.example.diana.androidclasswork.lesson9.Lesson9MainActivity;
 
+import io.reactivex.annotations.NonNull;
+import io.reactivex.observers.DisposableObserver;
+import io.reactivex.subjects.BehaviorSubject;
+import io.reactivex.subjects.PublishSubject;
+import io.reactivex.subjects.ReplaySubject;
+
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = MainActivity.class.getSimpleName();
     private LinearLayout layout;
 
     @Override
@@ -27,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         layout = (LinearLayout) findViewById(R.id.layout);
 
+        addButton(10, Lesson10MainActivity.class);
         addButton(9, Lesson9MainActivity.class);
         addButton(8, Lesson8MainActivity.class);
         addButton(7, Lesson7MainActivity.class);
@@ -54,5 +64,6 @@ public class MainActivity extends AppCompatActivity {
         });
         layout.addView(hw1Button);
     }
+
 
 }

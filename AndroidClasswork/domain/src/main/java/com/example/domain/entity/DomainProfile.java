@@ -4,7 +4,7 @@ package com.example.domain.entity;
  * Created by Diana on 11.08.2017.
  */
 
-public class Profile {
+public class DomainProfile implements DomainModel{
 
     private String name;
     private String surname;

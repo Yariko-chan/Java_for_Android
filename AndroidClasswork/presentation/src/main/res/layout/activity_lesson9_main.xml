@@ -19,7 +19,7 @@
         android:layout_height="match_parent"
         android:gravity="top|center_horizontal"
         android:orientation="vertical"
-    android:background="@{user.gender ? @android:color/holo_blue_light : @android:color/holo_red_light}"
+    android:background="@{user.gender ? @android:color/holo_blue_light : @android:color/white}"
         android:weightSum="20">
 
         <ImageView
@@ -72,7 +72,8 @@
         <ProgressBar
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="@{user.state == STATE.PROGRESS ? View.VISIBLE : View.GONE }"/>
+            android:layout_gravity="top|center"
+            android:visibility="@{user.state == STATE.PROGRESS ? View.VISIBLE : View.GONE }" />
 
     </LinearLayout>
 </layout>
