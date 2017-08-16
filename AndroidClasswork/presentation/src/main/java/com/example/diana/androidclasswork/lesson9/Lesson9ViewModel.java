@@ -10,6 +10,7 @@ import com.example.diana.androidclasswork.lesson8.Lesson8ViewModel;
 import com.example.domain.entity.DomainProfile;
 import com.example.domain.entity.ProfileId;
 import com.example.domain.interactions.ProfileUseCase;
+import com.example.domain.interactions.SaveProfileUseCase;
 
 import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableObserver;
@@ -31,6 +32,7 @@ public class Lesson9ViewModel implements BaseViewModel {
     public ObservableField<STATE> state = new ObservableField<>(STATE.PROGRESS);
 
     private ProfileUseCase useCase = new ProfileUseCase();
+    private SaveProfileUseCase saveProfileUseCase = new SaveProfileUseCase();
 
     @Override
     public void init() {
@@ -68,10 +70,35 @@ public class Lesson9ViewModel implements BaseViewModel {
 
             }
         });
+
+
+        DomainProfile profile = new DomainProfile();
+        profile.setName("Some name");
+        profile.setSurname("Some surname");
+        profile.setAge(42);
+        saveProfileUseCase.execute(profile, new DisposableObserver<Void>() {
+            @Override
+            public void onNext(@NonNull Void aVoid) {
+                Log.d(TAG, "sent");
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+                Log.d(TAG, "error");
+
+            }
+
+            @Override
+            public void onComplete() {
+                Log.d(TAG, "complete");
+
+            }
+        });
     }
 
     @Override
     public void pause() {
         useCase.dispose();
+        saveProfileUseCase.dispose();
     }
 }
