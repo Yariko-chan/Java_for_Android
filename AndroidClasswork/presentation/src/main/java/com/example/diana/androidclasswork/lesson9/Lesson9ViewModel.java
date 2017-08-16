@@ -48,7 +48,7 @@ public class Lesson9ViewModel implements BaseViewModel {
 
         useCase.execute(id, new DisposableObserver<DomainProfile>() { // subscribe for result information
             @Override
-            public void onNext(@NonNull DomainProfile profile) { // if ok, result - profile
+            public void onNext(@NonNull DomainProfile profile) { // here handle result - profile
                 name.set(profile.getName());
                 surname.set(profile.getSurname());
                 patronymic.set(profile.getPatronymic());
@@ -61,10 +61,10 @@ public class Lesson9ViewModel implements BaseViewModel {
             @Override
             public void onError(@NonNull Throwable e) { // here handle errors
                 Log.e(TAG, e.getMessage());
-            }
+            } // error handler
 
             @Override
-            public void onComplete() {
+            public void onComplete() { // signal that no other results will be was sent
 
             }
         });

@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".lesson7.Lesson7MainActivity">
         </activity>
+        <activity android:name=".lesson10.Lesson10MainActivity">
+        </activity>
     </application>
 
 </manifest>

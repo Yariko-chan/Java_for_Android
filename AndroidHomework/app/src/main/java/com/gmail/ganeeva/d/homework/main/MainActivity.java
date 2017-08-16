@@ -20,6 +20,7 @@ import com.gmail.ganeeva.d.homework.lesson4.Lesson4MainActivity;
 import com.gmail.ganeeva.d.homework.lesson5.Lesson5MainActivity;
 import com.gmail.ganeeva.d.homework.lesson6.Lesson6MainActivity;
 import com.gmail.ganeeva.d.homework.lesson7.Lesson7MainActivity;
+import com.gmail.ganeeva.d.homework.lesson10.Lesson10MainActivity;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout layout;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         addButton(5, Lesson5MainActivity.class);
         addButton(6, Lesson6MainActivity.class);
         addButton(7, Lesson7MainActivity.class);
+        addButton(10, Lesson10MainActivity.class);
     }
 
     private void addButton(int number, final Class mainActivity) {

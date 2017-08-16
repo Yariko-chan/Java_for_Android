@@ -16,7 +16,8 @@ public abstract class UseCase<InParam, OutParam> {
 
     private Disposable disposable;
 
-    public void execute(InParam param, DisposableObserver<OutParam> disposableObserver) {
+    // here we describe how to retrieve data concerning threads, but concrete process of retrieving data is in childs
+    public void execute(InParam param, DisposableObserver<OutParam> disposableObserver) { // subscribes @disposableObserver to result of buildUseCase (Observable), disposable neeeded to insubscribe later
         // second - output object with methods onResult and onError
         disposable = buildUseCase() // will form Observable, but not implemented until someone subscribed to it
                 .observeOn(AndroidSchedulers.mainThread()) // в каком потоке ждём результат here answer (on interface) handled, implemented in main thread
