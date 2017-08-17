@@ -8,8 +8,8 @@ public class DomainProfile implements DomainModel{
 
     private String name;
     private String surname;
-    private String patronymic;
     private int age;
+    private String patronymic;
     private boolean gender;
 
     public String getName() {

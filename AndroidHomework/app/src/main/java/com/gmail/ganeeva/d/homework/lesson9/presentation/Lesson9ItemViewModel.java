@@ -19,6 +19,9 @@ import com.bumptech.glide.request.target.Target;
 public class Lesson9ItemViewModel {
     public String imageUrl = "";
 
+    public void bind(int i) {
+
+    }
 
     @BindingAdapter({"bind:src"})
     public static void loadImage(ImageView view, String url) {

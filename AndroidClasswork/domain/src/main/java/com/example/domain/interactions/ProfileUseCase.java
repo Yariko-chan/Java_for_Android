@@ -1,10 +1,12 @@
 package com.example.domain.interactions;
 
 import com.example.data.entity.DataProfile;
+import com.example.data.net.RestService;
 import com.example.domain.entity.DomainProfile;
 import com.example.domain.entity.ProfileId;
 import com.example.domain.interactions.base.UseCase;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
@@ -17,36 +19,33 @@ import io.reactivex.functions.Function;
 
 public class ProfileUseCase extends UseCase<ProfileId, DomainProfile> {
     @Override
-    public Observable<DomainProfile> buildUseCase() {
+    public Observable<DomainProfile> buildUseCase(ProfileId id) {
 
-        // emulating query to data layer (which gets data from server or somewhere else)
-        DataProfile profile = new DataProfile();
-        profile.setName("Name");
-        profile.setSurname("Surname");
-        profile.setPatronymic("Patronymic");
-        profile.setAge(20);
-        profile.setGender(true);
-
-        return Observable
-                .just(profile) // just returns observable entity
-                // .filter() exclude some data
-                // .flatMap() implement another Observable
-                // .flat
-                // .subscribeWith
-                .delay(5, TimeUnit.SECONDS)
-                .map(new Function<DataProfile, DomainProfile>() {
-                    // map modifies data from one class to other
+        return RestService.getInstance().getProfiles()
+                .map(new Function<List<DataProfile>, DomainProfile>() {
                     @Override
-                    public DomainProfile apply(@NonNull DataProfile dataProfile) throws Exception {
+                    public DomainProfile apply(@NonNull List<DataProfile> dataProfiles) throws Exception {
+                        DataProfile dataProfile = dataProfiles.get(0);
                         DomainProfile domainProfile = new DomainProfile();
                         domainProfile.setName(dataProfile.getName());
                         domainProfile.setSurname(dataProfile.getSurname());
-                        domainProfile.setPatronymic(dataProfile.getPatronymic());
                         domainProfile.setAge(dataProfile.getAge());
-                        domainProfile.setGender(dataProfile.getGender());
+
+                        domainProfile.setPatronymic("none");
+                        domainProfile.setGender(true);
 
                         return domainProfile;
                     }
                 });
     }
 }
+
+/*
+new Function<DataProfile, DomainProfile>() {
+                    // map modifies data from one class to other
+                    @Override
+                    public DomainProfile apply(@NonNull DataProfile dataProfile) throws Exception {
+
+                    }
+                }
+ */
