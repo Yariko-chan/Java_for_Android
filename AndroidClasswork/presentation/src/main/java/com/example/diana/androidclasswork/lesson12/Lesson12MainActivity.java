@@ -17,6 +17,8 @@ public class Lesson12MainActivity extends  BaseActivity{
 
         ActivityLesson12MainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_lesson12_main);
         binding.setModel(model);
+        //adapter
+        //layoutmanager
 
         super.onCreate(savedInstanceState);
     }

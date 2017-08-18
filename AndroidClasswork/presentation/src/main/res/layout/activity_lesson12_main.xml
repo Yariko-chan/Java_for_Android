@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="@{model.state == STATE.DATA ? View.VISIBLE : View.GONE}"
-            android:id="@+id/recyclerView"/>
+            android:id="@id/recyclerView"/>
 
         <ProgressBar
             android:layout_width="wrap_content"

@@ -48,7 +48,7 @@ public class Lesson12ViewModel implements BaseViewModel{
             public void onNext(List<? extends DomainProfile> profileModels) {
 
                 Log.e("AAAA items = " + profileModels.size(), "");
-                sta
+                state.set(STATE.DATA);
 
             }
 

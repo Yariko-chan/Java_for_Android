@@ -25,7 +25,7 @@ public class Lesson12Adapter extends BaseAdapter
     public BaseItemViewHolder<DomainProfile, Lesson12ItemViewModel, ?>
     onCreateViewHolder(ViewGroup parent, int viewType) {
         Lesson12ItemViewModel itemViewModel = new Lesson12ItemViewModel();
-        return new Lesson12ItemViewHolder().create(LayoutInflater.from(context),
+        return Lesson12ItemViewHolder.create(LayoutInflater.from(context),
                 parent, itemViewModel);
     }
 }

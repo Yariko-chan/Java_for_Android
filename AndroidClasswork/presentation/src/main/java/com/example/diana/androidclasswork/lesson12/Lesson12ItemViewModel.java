@@ -10,7 +10,7 @@ import com.example.domain.entity.DomainProfile;
  */
 
 public class Lesson12ItemViewModel extends BaseItemViewModel<DomainProfile> {
-    ObservableField<String> name = new ObservableField<>("");
+    public ObservableField<String> name = new ObservableField<>("");
     @Override
     public void setItem(DomainProfile item, int position) {
         name.set(item.getName());

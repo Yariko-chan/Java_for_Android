@@ -23,8 +23,8 @@ public class Lesson12ItemViewHolder
         super(dataBinding, viewModel);
     }
 
-    public Lesson12ItemViewHolder create(LayoutInflater inflater, ViewGroup parent,
-                                         Lesson12ItemViewModel viewModel) {
+    public static Lesson12ItemViewHolder create(LayoutInflater inflater, ViewGroup parent,
+                                                Lesson12ItemViewModel viewModel) {
         ItemLesson12Binding binding = ItemLesson12Binding.inflate(inflater, parent, false);
         return new Lesson12ItemViewHolder(binding, viewModel);
     }
