@@ -1,6 +1,5 @@
 package com.gmail.ganeeva.d.homework.lesson10;
 
-import android.databinding.DataBindingComponent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
