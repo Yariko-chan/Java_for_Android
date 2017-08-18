@@ -2,9 +2,6 @@
 
 <layout>
     <data>
-        <variable
-            name="model"
-            type="com.gmail.ganeeva.d.homework.lesson10.Lesson10ViewModel"/>
     </data>
 
     <LinearLayout

@@ -191,4 +191,10 @@ public class Lesson4ClockView extends View {
 
         setMeasuredDimension(widthSize, heightSize);
     }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        removeCallbacks(updateClockRunnable);
+    }
 }

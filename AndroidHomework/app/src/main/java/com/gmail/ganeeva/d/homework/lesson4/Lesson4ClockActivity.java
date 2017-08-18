@@ -8,14 +8,27 @@ import android.widget.ImageView;
 import com.gmail.ganeeva.d.homework.R;
 
 public class Lesson4ClockActivity extends AppCompatActivity {
+    private AnimationDrawable owlAnimation;
+    private ImageView owlImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson4_clock);
 
-        ImageView owlImage = (ImageView) findViewById(R.id.owl_image);
-        AnimationDrawable owlAnimation = (AnimationDrawable) owlImage.getBackground();
+        owlImage = (ImageView) findViewById(R.id.owl_image);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        owlAnimation = (AnimationDrawable) owlImage.getBackground();
         owlAnimation.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        owlAnimation.stop();
     }
 }

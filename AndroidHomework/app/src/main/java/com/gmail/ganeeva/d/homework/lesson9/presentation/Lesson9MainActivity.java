@@ -21,7 +21,9 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.gmail.ganeeva.d.homework.R;
 import com.gmail.ganeeva.d.homework.databinding.ActivityLesson9MainBinding;
+import com.gmail.ganeeva.d.homework.databinding.ItemLesson9Binding;
 import com.gmail.ganeeva.d.homework.lesson10.Lesson10ViewModel;
+import com.gmail.ganeeva.d.homework.lesson9.domain.GetImageCountUseCase;
 
 public class Lesson9MainActivity extends AppCompatActivity {
     private Lesson10ViewModel viewModel;
@@ -30,63 +32,46 @@ public class Lesson9MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityLesson9MainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_lesson9_main);
-        binding.setModel(viewModel);
 
         binding.recyclerView.setLayoutManager(new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL));
-        binding.recyclerView.setAdapter(new Lesson9MainActivity.ImagesAdapter(this));
+        binding.recyclerView.setAdapter(new Lesson9MainActivity.ImagesAdapter());
     }
 
     private class ImagesAdapter extends RecyclerView.Adapter<Lesson9MainActivity.ImageHolder> {
-        private Context context;
-        private ProgressBar pb;
 
-        public ImagesAdapter(Context context) {
-            this.context = context;
+        public ImagesAdapter() {
         }
 
         @Override
         public Lesson9MainActivity.ImageHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View root = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_lesson6, parent, false);
-            return new Lesson9MainActivity.ImageHolder(root);
+            LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+            ItemLesson9Binding itemBinding = ItemLesson9Binding.inflate(layoutInflater, parent, false);
+            return new ImageHolder(itemBinding);
         }
 
         @Override
         public void onBindViewHolder(final Lesson9MainActivity.ImageHolder holder, int position) {
-            Glide.with(context)
-                .load(urls[position])
-                .listener(new RequestListener<Drawable>() {
-                    @Override
-                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                        holder.progressBar.setVisibility(View.GONE);
-                        holder.imageView.setVisibility(View.VISIBLE);
-                        return false;
-                    }
-                })
-                .into(holder.imageView);
+            Lesson9ItemViewModel model = new Lesson9ItemViewModel(position);
+            holder.bind(model);
         }
 
         @Override
         public int getItemCount() {
-            return urls.length;
+            return new GetImageCountUseCase().execute(null);
         }
     }
 
     public static class ImageHolder extends RecyclerView.ViewHolder{
+        private final ItemLesson9Binding binding;
 
-        ImageView imageView;
-        ProgressBar progressBar;
+        public ImageHolder(ItemLesson9Binding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
 
-        public ImageHolder(View itemView) {
-            super(itemView);
-
-            imageView = (ImageView) itemView.findViewById(R.id.image);
-            progressBar = (ProgressBar) itemView.findViewById(R.id.progressBar);
+        public void bind(Lesson9ItemViewModel viewModel) {
+            binding.setViewModel(viewModel);
+            binding.executePendingBindings();
         }
     }
 }
