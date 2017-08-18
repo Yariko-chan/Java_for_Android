@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 
 import com.example.diana.androidclasswork.lesson1.Lesson1MainActivity;
 import com.example.diana.androidclasswork.lesson10.Lesson10MainActivity;
+import com.example.diana.androidclasswork.lesson12.Lesson12MainActivity;
 import com.example.diana.androidclasswork.lesson3.Lesson3MainActivity;
 import com.example.diana.androidclasswork.lesson4.Lesson4MainActivity;
 import com.example.diana.androidclasswork.lesson5.Lesson5MainActivity;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         layout = (LinearLayout) findViewById(R.id.layout);
 
+        addButton(12, Lesson12MainActivity.class);
         addButton(10, Lesson10MainActivity.class);
         addButton(9, Lesson9MainActivity.class);
         addButton(8, Lesson8MainActivity.class);

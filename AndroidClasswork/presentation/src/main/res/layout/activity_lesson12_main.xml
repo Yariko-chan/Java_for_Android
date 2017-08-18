@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="com.example.diana.androidclasswork.lesson12.Lesson12ViewModel.STATE"/>
+        <import type="android.view.View"/>
+
+        <variable
+            name="model"
+            type="com.example.diana.androidclasswork.lesson12.Lesson12ViewModel"/>
+    </data>
+
+    <FrameLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{model.state == STATE.DATA ? View.VISIBLE : View.GONE}"
+            android:id="@+id/recyclerView"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{model.state == STATE.DATA ? View.GONE : View.VISIBLE}"/>
+    </FrameLayout>
+</layout>
