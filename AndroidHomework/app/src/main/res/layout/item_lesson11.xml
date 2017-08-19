@@ -6,17 +6,22 @@
 
         <variable
             name="user"
-            type=""/>
+            type="com.gmail.ganeeva.d.homework.lesson11.presentation.Lesson11ItemViewModel"/>
+
+        <!--<variable-->
+            <!--name="handler"-->
+            <!--type=""-->
     </data>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                  android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
+                 android:layout_height="70dp"
                  android:background="@android:color/holo_blue_dark">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{user.name + ' ' + user.surname}"/>
+            android:text="@{user.profileNameSurname}"/>
+            <!--android:onClick="@{handler.onClick}"-->
 
     </LinearLayout>
 </layout>

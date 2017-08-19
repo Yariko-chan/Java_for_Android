@@ -10,7 +10,6 @@ import com.example.domain.interactions.Lesson12GetProfilesUseCase;
 
 import java.util.List;
 
-import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableObserver;
 
 /**
@@ -19,10 +18,14 @@ import io.reactivex.observers.DisposableObserver;
 
 public class Lesson12ViewModel implements BaseViewModel{
 
+    private static final String TAG = Lesson12ViewModel.class.getSimpleName();
+
     public enum STATE {PROGRESS, DATA}
     public ObservableField<STATE> state = new ObservableField<>(STATE.PROGRESS);
 
     private Lesson12GetProfilesUseCase profilesUseCase = new Lesson12GetProfilesUseCase();
+
+    public Lesson12Adapter adapter = new Lesson12Adapter();
 
     private Activity activity;
 
@@ -42,14 +45,13 @@ public class Lesson12ViewModel implements BaseViewModel{
 
     @Override
     public void resume() {
-        profilesUseCase.execute(null, new DisposableObserver<List<? extends DomainProfile>>(){
+        profilesUseCase.execute(null, new DisposableObserver<List<DomainProfile>>(){
 
             @Override
-            public void onNext(List<? extends DomainProfile> profileModels) {
-
-                Log.e("AAAA items = " + profileModels.size(), "");
+            public void onNext(List<DomainProfile> profileModels) {
+                Log.d(TAG, "profiles count = " + profileModels.size());
                 state.set(STATE.DATA);
-
+                adapter.setItems(profileModels);
             }
 
             @Override

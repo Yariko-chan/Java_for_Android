@@ -40,7 +40,7 @@
         </activity>
         <activity android:name=".lesson9.presentation.Lesson9MainActivity">
         </activity>
-        <activity android:name=".lesson11.Lesson11MainActivity">
+        <activity android:name=".lesson11.presentation.Lesson11MainActivity">
         </activity>
     </application>
 

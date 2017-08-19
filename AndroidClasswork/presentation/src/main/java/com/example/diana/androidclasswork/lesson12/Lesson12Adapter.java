@@ -15,17 +15,10 @@ import com.example.domain.entity.DomainProfile;
 public class Lesson12Adapter extends BaseAdapter
         <DomainProfile, Lesson12ItemViewModel> {
 
-    private final Context context;
-
-    public Lesson12Adapter(Context context) {
-        this.context = context;
-    }
-
     @Override
-    public BaseItemViewHolder<DomainProfile, Lesson12ItemViewModel, ?>
-    onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BaseItemViewHolder<DomainProfile, Lesson12ItemViewModel, ?> onCreateViewHolder(ViewGroup parent, int viewType) {
         Lesson12ItemViewModel itemViewModel = new Lesson12ItemViewModel();
-        return Lesson12ItemViewHolder.create(LayoutInflater.from(context),
+        return Lesson12ItemViewHolder.create(LayoutInflater.from(parent.getContext()),
                 parent, itemViewModel);
     }
 }

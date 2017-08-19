@@ -21,6 +21,7 @@ public class Lesson12ItemViewHolder
 
     public Lesson12ItemViewHolder(ItemLesson12Binding dataBinding, Lesson12ItemViewModel viewModel) {
         super(dataBinding, viewModel);
+        dataBinding.setModel(viewModel);
     }
 
     public static Lesson12ItemViewHolder create(LayoutInflater inflater, ViewGroup parent,

@@ -3,6 +3,7 @@ package com.example.domain.interactions
 import com.example.data.entity.DataProfile
 import com.example.data.net.RestService
 import com.example.domain.entity.DomainProfile
+import com.example.domain.entity.ProfileId
 import com.example.domain.interactions.base.UseCase
 
 import java.util.ArrayList
@@ -15,8 +16,8 @@ import io.reactivex.functions.Function
  * Created by Diana on 18.08.2017.
  */
 
-class Lesson12GetProfilesUseCase : UseCase<Void, List<DomainProfile>>() {
-    override fun buildUseCase(param: Void?): Observable<List<DomainProfile>> {
+class Lesson12GetProfilesUseCaseKT : UseCase<ProfileId, List<DomainProfile>>() {
+    override fun buildUseCase(param: ProfileId?): Observable<List<DomainProfile>> {
         return RestService.getInstance()
                 .profiles
                 .map {

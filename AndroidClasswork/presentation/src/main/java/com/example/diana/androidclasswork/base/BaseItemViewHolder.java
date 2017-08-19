@@ -11,7 +11,7 @@ import android.view.View;
 
 public abstract class BaseItemViewHolder
         <Model,
-        ViewModel extends BaseItemViewModel,
+        ViewModel extends BaseItemViewModel<Model>,
         DataBinding extends ViewDataBinding>
 
         extends RecyclerView.ViewHolder {

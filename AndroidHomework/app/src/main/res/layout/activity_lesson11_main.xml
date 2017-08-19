@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
     <data>
+        <import type="android.view.View"/>
+        <import type="com.gmail.ganeeva.d.homework.lesson11.presentation.Lesson11ViewModel.STATE"/>
+        <variable
+            name="viewModel"
+            type="com.gmail.ganeeva.d.homework.lesson11.presentation.Lesson11ViewModel"/>
     </data>
 
-    <LinearLayout
+    <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -12,13 +17,16 @@
         android:orientation="vertical"
         tools:context="com.gmail.ganeeva.d.homework.lesson6.Lesson6MainActivity">
 
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/holo_red_dark"
+            />
 
-            ></android.support.v7.widget.RecyclerView>
-
-    </LinearLayout>
+    </FrameLayout>
 </layout>
