@@ -35,7 +35,7 @@ public class Lesson6MainActivity extends AppCompatActivity {
         list.add("Saturday");
         list.add("Sunday");
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycleView);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
         LinearLayoutManager llManager = new LinearLayoutManager(this);
         // GridLayout
