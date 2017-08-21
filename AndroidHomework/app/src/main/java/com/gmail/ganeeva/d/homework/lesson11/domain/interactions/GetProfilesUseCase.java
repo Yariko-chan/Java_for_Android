@@ -2,7 +2,7 @@ package com.gmail.ganeeva.d.homework.lesson11.domain.interactions;
 
 import com.gmail.ganeeva.d.homework.lesson11.data.DataProfile;
 import com.gmail.ganeeva.d.homework.lesson11.data.net.RestService;
-import com.gmail.ganeeva.d.homework.lesson11.domain.DomainProfile;
+import com.gmail.ganeeva.d.homework.lesson11.domain.entity.DomainProfile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,11 +32,12 @@ public class GetProfilesUseCase extends UseCase<String, List<DomainProfile>> {
                 });
     }
 
-    private DomainProfile convert(DataProfile dataProfile) {
+    public static DomainProfile convert(DataProfile dataProfile) {
         DomainProfile domainProfile = new DomainProfile();
         domainProfile.setName(dataProfile.getName());
         domainProfile.setSurname(dataProfile.getSurname());
         domainProfile.setAge(dataProfile.getAge());
+        domainProfile.setId(dataProfile.getId());
         return domainProfile;
     }
 }

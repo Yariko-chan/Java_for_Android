@@ -10,4 +10,6 @@
     <!--Homework 3-->
     <string name="hint_url_of_image">Enter url of image...</string>
     <string name="download_image">Get it!</string>
+    <string name="error">Oops! Something went wrong.</string>
+    <string name="save">Save</string>
 </resources>

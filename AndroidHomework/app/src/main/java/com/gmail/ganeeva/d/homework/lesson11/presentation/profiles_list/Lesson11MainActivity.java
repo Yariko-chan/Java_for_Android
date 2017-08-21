@@ -1,7 +1,6 @@
-package com.gmail.ganeeva.d.homework.lesson11.presentation;
+package com.gmail.ganeeva.d.homework.lesson11.presentation.profiles_list;
 
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 
@@ -15,7 +14,7 @@ public class Lesson11MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         ActivityLesson11MainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_lesson11_main);
 
-        Lesson11ViewModel viewModel = new Lesson11ViewModel();
+        Lesson11ProfilesListViewModel viewModel = new Lesson11ProfilesListViewModel();
         this.setViewModel(viewModel);
 
         binding.setViewModel(viewModel);

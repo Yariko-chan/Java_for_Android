@@ -62,11 +62,15 @@ public class RestService {
         return restAPI.getProfiles();
     }
 
-    public Observable<DataProfile> getProfile(Integer id) {
+    public Observable<DataProfile> getProfile(String id) {
         return restAPI.getProfile(id);
     }
 
-    public Observable<Void> saveProfile(DataProfile profile) {
-        return restAPI.saveProfile(profile);
+    public Observable<Void> saveNewProfile(DataProfile profile) {
+        return restAPI.saveNewProfile(profile);
+    }
+
+    public Observable<DataProfile> saveOldProfile(DataProfile profile) {
+        return restAPI.saveOldProfile(profile, profile.getId());
     }
 }

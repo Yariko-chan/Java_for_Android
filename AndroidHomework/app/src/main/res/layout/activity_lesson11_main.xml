@@ -2,10 +2,10 @@
 <layout>
     <data>
         <import type="android.view.View"/>
-        <import type="com.gmail.ganeeva.d.homework.lesson11.presentation.Lesson11ViewModel.STATE"/>
+        <import type="com.gmail.ganeeva.d.homework.lesson11.presentation.profiles_list.Lesson11ProfilesListViewModel.STATE"/>
         <variable
             name="viewModel"
-            type="com.gmail.ganeeva.d.homework.lesson11.presentation.Lesson11ViewModel"/>
+            type="com.gmail.ganeeva.d.homework.lesson11.presentation.profiles_list.Lesson11ProfilesListViewModel"/>
     </data>
 
     <FrameLayout

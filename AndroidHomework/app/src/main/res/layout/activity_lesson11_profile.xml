@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="com.gmail.ganeeva.d.homework.lesson11.presentation.profile_details.Lesson11ProfileViewModel.STATE"/>
+        <import type="android.view.View"/>
+
+        <variable
+            name="profile"
+            type="com.gmail.ganeeva.d.homework.lesson11.presentation.profile_details.Lesson11ProfileViewModel"/>
+        <variable
+            name="handler"
+            type="com.gmail.ganeeva.d.homework.lesson11.presentation.ClickHandler"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="@string/error"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="30sp"
+            android:visibility="@{profile.state == STATE.ERROR ? View.VISIBLE : View.GONE}"/>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{profile.state == STATE.PROGRESS ? View.VISIBLE : View.GONE}"/>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/poland_white"
+            android:orientation="vertical"
+            android:visibility="@{(profile.state == STATE.DATA || profile.state == STATE.EDIT) ? View.VISIBLE : View.GONE}"
+            android:weightSum="9"
+            tools:context="com.gmail.ganeeva.d.homework.lesson11.presentation.profile_details.Lesson11ProfileActivity">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:src="@drawable/ic_lesson11_default_profile_image"/>
+
+            <ImageButton
+                android:id="@+id/editButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:onClick="@{() -> handler.onProfileEdit(profile)}"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:src="@drawable/edit"
+                android:visibility="@{profile.state == STATE.EDIT ? View.GONE : View.VISIBLE}"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="top|center_horizontal"
+                    android:text="@{profile.name}"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="30sp"
+                    android:visibility="@{profile.state == STATE.EDIT ? View.GONE : View.VISIBLE}"
+                    tools:text="Name"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light"
+                    android:backgroundTintMode="src_in"
+                    android:text="@={profile.name}"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="30sp"
+                    android:visibility="@{profile.state == STATE.EDIT ? View.VISIBLE : View.GONE}"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/surname"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="top|center_horizontal"
+                    android:text="@{profile.surname}"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="30sp"
+                    android:visibility="@{profile.state == STATE.EDIT ? View.GONE : View.VISIBLE}"
+                    tools:text="Surname"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light"
+                    android:backgroundTintMode="src_in"
+                    android:text="@={profile.surname}"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="30sp"
+                    android:visibility="@{profile.state == STATE.EDIT ? View.VISIBLE : View.GONE}"/>
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/age"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:gravity="top|center_horizontal"
+                    android:text="@{String.valueOf(profile.age)}"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="30sp"
+                    android:visibility="@{profile.state == STATE.EDIT ? View.GONE : View.VISIBLE}"
+                    tools:text="25"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/background_light"
+                    android:backgroundTintMode="src_in"
+                    android:inputType="number"
+                    android:text="@={profile.age}"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="30sp"
+                    android:visibility="@{profile.state == STATE.EDIT ? View.VISIBLE : View.GONE}"/>
+            </FrameLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:text="@string/save"
+                android:onClick="@{() -> handler.onSaveProfile(profile)}"
+                android:visibility="@{profile.state == STATE.EDIT ? View.VISIBLE : View.GONE}"/>
+        </LinearLayout>
+    </FrameLayout>
+
+</layout>

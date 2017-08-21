@@ -5,12 +5,12 @@
         <import type="android.view.View"/>
 
         <variable
-            name="user"
-            type="com.gmail.ganeeva.d.homework.lesson11.presentation.Lesson11ItemViewModel"/>
+            name="profile"
+            type="com.gmail.ganeeva.d.homework.lesson11.presentation.profiles_list.item.Lesson11ItemViewModel"/>
 
-        <!--<variable-->
-            <!--name="handler"-->
-            <!--type=""-->
+        <variable
+            name="handler"
+            type="com.gmail.ganeeva.d.homework.lesson11.presentation.ClickHandler"/>
     </data>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                  android:layout_width="match_parent"
@@ -20,8 +20,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@{user.profileNameSurname}"/>
-            <!--android:onClick="@{handler.onClick}"-->
+            android:text="@{profile.profileNameSurname}"
+            android:onClick="@{() -> handler.onItemClick(profile.id.get())}"/>
 
     </LinearLayout>
 </layout>
