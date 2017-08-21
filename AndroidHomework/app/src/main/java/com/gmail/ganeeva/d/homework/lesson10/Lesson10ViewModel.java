@@ -18,7 +18,7 @@ public class Lesson10ViewModel {
 
     public void resume() {
 
-        disposable = Observable.interval(2, TimeUnit.SECONDS)
+        disposable = Observable.interval(1, TimeUnit.SECONDS)
             .filter(new Predicate<Long>() {
                 @Override
                 public boolean test(@NonNull Long aLong) throws Exception {
