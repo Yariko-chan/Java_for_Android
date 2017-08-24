@@ -13,12 +13,15 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         tools:context="com.gmail.ganeeva.d.homework.lesson10.Lesson10MainActivity">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{model.text}"/>
+            android:text="@{model.text}"
+            android:textSize="30dp"
+            android:gravity="center"/>
 
     </LinearLayout>
 </layout>
