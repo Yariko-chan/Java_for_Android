@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import com.gmail.ganeeva.d.homework.R;
 import com.gmail.ganeeva.d.homework.lesson1.Lesson1MainActivity;
 import com.gmail.ganeeva.d.homework.lesson11.presentation.profiles_list.Lesson11MainActivity;
+import com.gmail.ganeeva.d.homework.lesson13.Lesson13MainActivity;
 import com.gmail.ganeeva.d.homework.lesson2.Lesson2MainActivity;
 import com.gmail.ganeeva.d.homework.lesson3.Lesson3MainActivity;
 import com.gmail.ganeeva.d.homework.lesson4.Lesson4MainActivity;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         addButton(9, Lesson9MainActivity.class);
         addButton(10, Lesson10MainActivity.class);
         addButton(11, Lesson11MainActivity.class);
+        addButton(13, Lesson13MainActivity.class);
     }
 
     private void addButton(int number, final Class mainActivity) {
