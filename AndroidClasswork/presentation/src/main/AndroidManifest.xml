@@ -44,7 +44,8 @@
         <activity android:name=".lesson9.Lesson9MainActivity" />
         <activity android:name=".lesson10.Lesson10MainActivity" />
         <activity android:name=".lesson12.Lesson12MainActivity" />
-        <activity android:name=".lesson13.Lesson13MainActivity"></activity>
+        <activity android:name=".lesson13.Lesson13MainActivity" />
+        <activity android:name=".lesson14.Lesson14MainActivity"></activity>
     </application>
 
 </manifest>
