@@ -1,14 +1,12 @@
 package com.gmail.ganeeva.d.homework.lesson11.presentation.profile_details;
 
-import android.app.Activity;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.gmail.ganeeva.d.homework.R;
 import com.gmail.ganeeva.d.homework.databinding.ActivityLesson11ProfileBinding;
 import com.gmail.ganeeva.d.homework.lesson11.presentation.ClickHandler;
-import com.gmail.ganeeva.d.homework.lesson11.presentation.base.BaseActivity;
+import com.gmail.ganeeva.d.homework.base.BaseActivity;
 
 public class Lesson11ProfileActivity extends BaseActivity {
 

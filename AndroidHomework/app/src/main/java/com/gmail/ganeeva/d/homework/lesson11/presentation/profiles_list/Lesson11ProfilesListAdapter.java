@@ -4,8 +4,8 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.gmail.ganeeva.d.homework.lesson11.domain.entity.DomainProfile;
-import com.gmail.ganeeva.d.homework.lesson11.presentation.base.BaseAdapter;
-import com.gmail.ganeeva.d.homework.lesson11.presentation.base.BaseItemHolder;
+import com.gmail.ganeeva.d.homework.base.BaseAdapter;
+import com.gmail.ganeeva.d.homework.base.BaseItemHolder;
 import com.gmail.ganeeva.d.homework.lesson11.presentation.profiles_list.item.Lesson11ItemHolder;
 import com.gmail.ganeeva.d.homework.lesson11.presentation.profiles_list.item.Lesson11ItemViewModel;
 

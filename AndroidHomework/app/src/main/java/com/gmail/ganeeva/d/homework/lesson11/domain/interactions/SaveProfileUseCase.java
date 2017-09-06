@@ -1,5 +1,6 @@
 package com.gmail.ganeeva.d.homework.lesson11.domain.interactions;
 
+import com.gmail.ganeeva.d.homework.base.interactions.UseCase;
 import com.gmail.ganeeva.d.homework.lesson11.data.DataProfile;
 import com.gmail.ganeeva.d.homework.lesson11.data.net.RestService;
 import com.gmail.ganeeva.d.homework.lesson11.domain.entity.DomainProfile;

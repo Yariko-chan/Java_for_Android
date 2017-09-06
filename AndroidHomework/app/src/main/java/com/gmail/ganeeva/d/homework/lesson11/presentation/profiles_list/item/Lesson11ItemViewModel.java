@@ -4,7 +4,7 @@ import android.databinding.ObservableField;
 
 import com.gmail.ganeeva.d.homework.lesson11.domain.entity.DomainProfile;
 import com.gmail.ganeeva.d.homework.lesson11.domain.entity.DomainProfileId;
-import com.gmail.ganeeva.d.homework.lesson11.presentation.base.BaseItemViewModel;
+import com.gmail.ganeeva.d.homework.base.BaseItemViewModel;
 
 /**
  * Created by Diana on 19.08.2017 at 15:01.

@@ -1,4 +1,4 @@
-package com.gmail.ganeeva.d.homework.lesson11.domain.interactions;
+package com.gmail.ganeeva.d.homework.base.interactions;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;

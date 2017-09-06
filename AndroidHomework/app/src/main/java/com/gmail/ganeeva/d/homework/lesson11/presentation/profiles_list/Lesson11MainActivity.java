@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 
 import com.gmail.ganeeva.d.homework.R;
 import com.gmail.ganeeva.d.homework.databinding.ActivityLesson11MainBinding;
-import com.gmail.ganeeva.d.homework.lesson11.presentation.base.BaseActivity;
+import com.gmail.ganeeva.d.homework.base.BaseActivity;
 
 public class Lesson11MainActivity extends BaseActivity {
 

@@ -43,7 +43,6 @@ public class Lesson13Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.e("", "");
         FragmentLesson13Binding binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_lesson13, container, false);
         binding.setUser(user);

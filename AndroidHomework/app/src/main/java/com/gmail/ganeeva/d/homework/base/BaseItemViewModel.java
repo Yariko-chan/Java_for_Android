@@ -1,4 +1,6 @@
-package com.gmail.ganeeva.d.homework.lesson11.presentation.base;
+package com.gmail.ganeeva.d.homework.base;
+
+import com.gmail.ganeeva.d.homework.base.BaseViewModel;
 
 /**
  * Created by Diana on 19.08.2017 at 14:23.

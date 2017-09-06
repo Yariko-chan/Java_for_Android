@@ -12,7 +12,7 @@ import com.gmail.ganeeva.d.homework.lesson11.domain.entity.DomainProfile;
 import com.gmail.ganeeva.d.homework.lesson11.domain.entity.DomainProfileId;
 import com.gmail.ganeeva.d.homework.lesson11.domain.interactions.GetProfileUseCase;
 import com.gmail.ganeeva.d.homework.lesson11.domain.interactions.SaveProfileUseCase;
-import com.gmail.ganeeva.d.homework.lesson11.presentation.base.BaseViewModel;
+import com.gmail.ganeeva.d.homework.base.BaseViewModel;
 
 import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableObserver;

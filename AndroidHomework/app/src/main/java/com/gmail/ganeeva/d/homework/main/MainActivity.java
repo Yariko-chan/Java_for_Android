@@ -13,6 +13,7 @@ import com.gmail.ganeeva.d.homework.R;
 import com.gmail.ganeeva.d.homework.lesson1.Lesson1MainActivity;
 import com.gmail.ganeeva.d.homework.lesson11.presentation.profiles_list.Lesson11MainActivity;
 import com.gmail.ganeeva.d.homework.lesson13.Lesson13MainActivity;
+import com.gmail.ganeeva.d.homework.lesson14.presenation.Lesson14MainActivity;
 import com.gmail.ganeeva.d.homework.lesson2.Lesson2MainActivity;
 import com.gmail.ganeeva.d.homework.lesson3.Lesson3MainActivity;
 import com.gmail.ganeeva.d.homework.lesson4.Lesson4MainActivity;
@@ -31,17 +32,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         layout = (LinearLayout) findViewById(R.id.layout);
 
-        addButton(1, Lesson1MainActivity.class);
-        addButton(2, Lesson2MainActivity.class);
-        addButton(3, Lesson3MainActivity.class);
-        addButton(4, Lesson4MainActivity.class);
-        addButton(5, Lesson5MainActivity.class);
-        addButton(6, Lesson6MainActivity.class);
-        addButton(7, Lesson7MainActivity.class);
-        addButton(9, Lesson9MainActivity.class);
-        addButton(10, Lesson10MainActivity.class);
-        addButton(11, Lesson11MainActivity.class);
+        addButton(14, Lesson14MainActivity.class);
         addButton(13, Lesson13MainActivity.class);
+        addButton(11, Lesson11MainActivity.class);
+        addButton(10, Lesson10MainActivity.class);
+        addButton(9, Lesson9MainActivity.class);
+        addButton(7, Lesson7MainActivity.class);
+        addButton(6, Lesson6MainActivity.class);
+        addButton(5, Lesson5MainActivity.class);
+        addButton(4, Lesson4MainActivity.class);
+        addButton(3, Lesson3MainActivity.class);
+        addButton(2, Lesson2MainActivity.class);
+        addButton(1, Lesson1MainActivity.class);
     }
 
     private void addButton(int number, final Class mainActivity) {

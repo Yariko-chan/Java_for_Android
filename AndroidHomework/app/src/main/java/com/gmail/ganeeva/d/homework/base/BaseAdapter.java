@@ -1,8 +1,6 @@
-package com.gmail.ganeeva.d.homework.lesson11.presentation.base;
+package com.gmail.ganeeva.d.homework.base;
 
-import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
-import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;

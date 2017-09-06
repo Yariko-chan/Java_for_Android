@@ -2,7 +2,7 @@ package com.gmail.ganeeva.d.homework.lesson11.presentation.profiles_list;
 
 import com.gmail.ganeeva.d.homework.lesson11.domain.entity.DomainProfile;
 import com.gmail.ganeeva.d.homework.lesson11.domain.interactions.GetProfilesUseCase;
-import com.gmail.ganeeva.d.homework.lesson11.presentation.base.BaseViewModel;
+import com.gmail.ganeeva.d.homework.base.BaseViewModel;
 import com.gmail.ganeeva.d.homework.lesson11.presentation.profiles_list.item.Lesson11ItemHolder;
 
 import java.util.List;
