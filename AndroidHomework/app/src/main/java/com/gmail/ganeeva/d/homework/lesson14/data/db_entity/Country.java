@@ -1,4 +1,4 @@
-package com.gmail.ganeeva.d.homework.lesson14.domain.entity;
+package com.gmail.ganeeva.d.homework.lesson14.data.db_entity;
 
 /**
  * Created by Diana on 04.09.2017.
@@ -7,10 +7,6 @@ package com.gmail.ganeeva.d.homework.lesson14.domain.entity;
 public class Country {
     private int id;
     private String name;
-
-    public Country(String name) {
-        this.name = name;
-    }
 
     public Country(int id, String name) {
         this.id = id;

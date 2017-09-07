@@ -2,8 +2,6 @@ package com.gmail.ganeeva.d.homework.lesson14.presenation;
 
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 
 import com.gmail.ganeeva.d.homework.R;
 import com.gmail.ganeeva.d.homework.databinding.ActivityLesson14MainBinding;
@@ -20,7 +18,7 @@ public class Lesson14MainActivity extends BaseActivity {
         binding.setViewModel(viewModel);
         binding.spinner.setAdapter(viewModel.adapter);
         binding.spinner.setOnItemSelectedListener(viewModel);
-        binding.spinner.setSelection(viewModel.selection);
+        binding.spinner.setSelection(viewModel.countryListSelectedPosition);
         super.onCreate(savedInstanceState);
     }
 }

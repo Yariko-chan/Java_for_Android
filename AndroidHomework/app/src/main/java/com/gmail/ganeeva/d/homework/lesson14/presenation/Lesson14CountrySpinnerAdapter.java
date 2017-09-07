@@ -4,11 +4,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
 
-import com.gmail.ganeeva.d.homework.R;
 import com.gmail.ganeeva.d.homework.databinding.ItemSpinnerLesson14Binding;
-import com.gmail.ganeeva.d.homework.lesson14.domain.entity.Country;
+import com.gmail.ganeeva.d.homework.lesson14.domain.entity.AssetCountry;
 
 import java.util.ArrayList;
 
@@ -18,9 +16,9 @@ import java.util.ArrayList;
 
 public class Lesson14CountrySpinnerAdapter extends BaseAdapter {
 
-    private ArrayList<Country> countryList = new ArrayList<>();
+    private ArrayList<AssetCountry> countryList = new ArrayList<>();
 
-    public void setCountryList(ArrayList<Country> countryList) {
+    public void setCountryList(ArrayList<AssetCountry> countryList) {
         this.countryList = countryList;
     }
 
@@ -72,7 +70,7 @@ public class Lesson14CountrySpinnerAdapter extends BaseAdapter {
             dataBinding.setViewModel(viewModel);
         }
 
-        public void bind(Country country) {
+        public void bind(AssetCountry country) {
             viewModel.setCountry(country);
             dataBinding.executePendingBindings(); // refresh layout
         }
