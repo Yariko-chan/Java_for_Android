@@ -85,8 +85,8 @@ public class Lesson16MainActivity extends AppCompatActivity {
         realm.executeTransactionAsync(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-                // asynchroniously 
+                // asynchroniously
             }
-        })
+        });
     }
 }
