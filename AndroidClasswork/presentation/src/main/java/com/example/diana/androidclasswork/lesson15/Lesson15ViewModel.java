@@ -15,7 +15,7 @@ import com.example.domain.interactions.SaveUserUseCase;
 
 public class Lesson15ViewModel implements BaseViewModel{
     private ObservableField<String> userName = new ObservableField<>();
-    private ObservableInt userAge = new ObservableField<>();
+    private ObservableInt userAge = new ObservableInt();
     private ObservableField<String> countryName = new ObservableField<>();
     private Context context;
 
@@ -44,6 +44,6 @@ public class Lesson15ViewModel implements BaseViewModel{
         user.setName(userName.get());
         user.setAge(userAge.get());
         Lesson15Frankenstein franky = new Lesson15Frankenstein(context, user);
-        useCase.execute();
+//        useCase.execute();
     }
 }

@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".ThisApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -46,7 +47,8 @@
         <activity android:name=".lesson12.Lesson12MainActivity" />
         <activity android:name=".lesson13.Lesson13MainActivity" />
         <activity android:name=".lesson14.Lesson14MainActivity" />
-        <activity android:name=".lesson15.Lesson15MainActivity"></activity>
+        <activity android:name=".lesson15.Lesson15MainActivity" />
+        <activity android:name=".lesson16.Lesson16MainActivity"></activity>
     </application>
 
 </manifest>

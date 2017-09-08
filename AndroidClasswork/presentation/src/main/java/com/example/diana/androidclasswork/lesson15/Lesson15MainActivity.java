@@ -13,7 +13,7 @@ public class Lesson15MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Lesson15ViewModel viewModel = new Lesson15ViewModel();
+        Lesson15ViewModel viewModel = new Lesson15ViewModel(this);
         this.viewModel = viewModel;
         ActivityLesson15MainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_lesson15_main);
         binding.setViewModel(viewModel);
