@@ -5,6 +5,7 @@ import android.databinding.ObservableField;
 import android.databinding.ObservableInt;
 import android.util.Log;
 
+import com.example.diana.androidclasswork.ThisApplication;
 import com.example.diana.androidclasswork.base.BaseViewModel;
 import com.example.diana.androidclasswork.lesson8.Lesson8ViewModel;
 import com.example.domain.entity.DomainProfile;
@@ -12,9 +13,10 @@ import com.example.domain.entity.ProfileId;
 import com.example.domain.interactions.ProfileUseCase;
 import com.example.domain.interactions.SaveProfileUseCase;
 
+import javax.inject.Inject;
+
 import io.reactivex.annotations.NonNull;
 import io.reactivex.observers.DisposableObserver;
-import io.reactivex.subjects.PublishSubject;
 
 /**
  * Created by Diana on 11.08.2017.
@@ -31,11 +33,13 @@ public class Lesson9ViewModel implements BaseViewModel {
     public enum STATE {PROGRESS, DATA}
     public ObservableField<STATE> state = new ObservableField<>(STATE.PROGRESS);
 
-    private ProfileUseCase useCase = new ProfileUseCase();
+    @Inject
+    public ProfileUseCase useCase;
     private SaveProfileUseCase saveProfileUseCase = new SaveProfileUseCase();
 
     @Override
     public void init() {
+        ThisApplication.appComponent.inject(this);
     }
 
     @Override

@@ -2,6 +2,10 @@ package com.example.diana.androidclasswork;
 
 import android.app.Application;
 
+import com.example.diana.androidclasswork.di.AppComponent;
+import com.example.diana.androidclasswork.di.AppModule;
+import com.example.diana.androidclasswork.di.DaggerAppComponent;
+
 import io.realm.Realm;
 
 /**
@@ -9,9 +13,15 @@ import io.realm.Realm;
  */
 
 public class ThisApplication extends Application {
+
+    public static AppComponent appComponent;
+
     @Override
     public void onCreate() {
         super.onCreate();
         Realm.init(this);
+        appComponent = DaggerAppComponent.builder()
+                .appModule(new AppModule())
+                .build();
     }
 }
