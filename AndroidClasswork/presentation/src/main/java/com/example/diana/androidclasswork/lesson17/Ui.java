@@ -1,5 +1,7 @@
 package com.example.diana.androidclasswork.lesson17;
 
+import android.util.Log;
+
 import com.example.diana.androidclasswork.ThisApplication;
 
 import javax.inject.Inject;
@@ -18,6 +20,7 @@ public class Ui {
     }
 
     public void testUseCase1() {
-        useCase1.getRestData();
+        String s = useCase1.getRestData();
+        Log.d("", s);
     }
 }

@@ -29,6 +29,7 @@ public class Lesson9MainActivity extends BaseActivity {
 
         ActivityLesson9MainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_lesson9_main);
         binding.setUser(user);
+
         super.onCreate(savedInstanceState);
     }
 }

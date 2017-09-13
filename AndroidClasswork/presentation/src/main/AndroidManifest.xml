@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.diana.androidclasswork">
+          package="com.example.diana.androidclasswork">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".ThisApplication"
@@ -15,16 +15,16 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".lesson1.Lesson1MainActivity" />
-        <activity android:name=".lesson1.Lesson1DisplayActivity" />
-        <activity android:name=".lesson3.Lesson3MainActivity" />
-        <activity android:name=".lesson4.Lesson4MainActivity" />
-        <activity android:name=".lesson5.Lesson5MainActivity" />
+        <activity android:name=".lesson1.Lesson1MainActivity"/>
+        <activity android:name=".lesson1.Lesson1DisplayActivity"/>
+        <activity android:name=".lesson3.Lesson3MainActivity"/>
+        <activity android:name=".lesson4.Lesson4MainActivity"/>
+        <activity android:name=".lesson5.Lesson5MainActivity"/>
 
         <!-- <receiver android:name=".lesson5.MyBroadcastReceiver"> -->
         <!-- <intent-filter> -->
@@ -36,19 +36,21 @@
         <!-- </intent-filter> -->
         <!-- </receiver> -->
 
-        <service android:name=".lesson5.MyService" />
-        <service android:name=".lesson5.MyIntentService" />
+        <service android:name=".lesson5.MyService"/>
+        <service android:name=".lesson5.MyIntentService"/>
 
-        <activity android:name=".lesson6.Lesson6MainActivity" />
-        <activity android:name=".lesson7.Lesson7MainActivity" />
-        <activity android:name=".lesson8.Lesson8MainActivity" />
-        <activity android:name=".lesson9.Lesson9MainActivity" />
-        <activity android:name=".lesson10.Lesson10MainActivity" />
-        <activity android:name=".lesson12.Lesson12MainActivity" />
-        <activity android:name=".lesson13.Lesson13MainActivity" />
-        <activity android:name=".lesson14.Lesson14MainActivity" />
-        <activity android:name=".lesson15.Lesson15MainActivity" />
-        <activity android:name=".lesson16.Lesson16MainActivity"></activity>
+        <activity android:name=".lesson6.Lesson6MainActivity"/>
+        <activity android:name=".lesson7.Lesson7MainActivity"/>
+        <activity android:name=".lesson8.Lesson8MainActivity"/>
+        <activity android:name=".lesson9.Lesson9MainActivity"/>
+        <activity android:name=".lesson10.Lesson10MainActivity"/>
+        <activity android:name=".lesson12.Lesson12MainActivity"/>
+        <activity android:name=".lesson13.Lesson13MainActivity"/>
+        <activity android:name=".lesson14.Lesson14MainActivity"/>
+        <activity android:name=".lesson15.Lesson15MainActivity"/>
+        <activity android:name=".lesson16.Lesson16MainActivity"/>
+        <activity android:name=".lesson17.Lesson17MainActivity">
+        </activity>
     </application>
 
 </manifest>
