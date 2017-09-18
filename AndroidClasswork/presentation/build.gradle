@@ -1,4 +1,19 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
 apply plugin: 'realm-android'
 
 android {
@@ -12,16 +27,52 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\Diana\\Projects\\Android\\debug_certificate.jks')
+            storePassword '123456'
+            keyAlias 'Classwork'
+            keyPassword '123456'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        production {
+            buildConfigField "String", "API_REST", "\" https://tut.by \""
+            versionCode 1
+            versionName "1.0"
+        }
+        developer {
+            buildConfigField "String", "API_REST", "\" https://test.tut.by \""
+
+            versionCode 1
+            versionName "1.0"
         }
     }
     dataBinding {
         enabled = true
     }
 }
+
+//task loadToFabric(dependsOn: "assembleDeveloperDebug") {
+//    def task = tasks.getByName("crashlyticsUploadDistributionDeveloperDebug")
+//    task.ext.betaDistributionReleaseNotes = ""
+//    task.ext.betaDistributionGroupAliases = ""
+//    task.execute()
+//}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
@@ -42,4 +93,7 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.8'
     annotationProcessor 'com.android.databinding:compiler:2.3.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
+        transitive = true;
+    }
 }
