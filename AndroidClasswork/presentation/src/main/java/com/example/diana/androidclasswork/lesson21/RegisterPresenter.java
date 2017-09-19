@@ -49,7 +49,7 @@ public class RegisterPresenter implements RegisterBasePresenter{
             public void onComplete() {
 
             }
-        })
+        });
     }
 
     @Override
