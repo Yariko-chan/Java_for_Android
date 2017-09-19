@@ -1,5 +1,8 @@
 package com.example.diana.androidclasswork.di;
 
+import android.app.Application;
+import android.content.Context;
+
 import com.example.diana.androidclasswork.lesson17.Gson;
 import com.example.diana.androidclasswork.lesson17.OkHttp;
 import com.example.diana.androidclasswork.lesson17.Rest;
@@ -18,6 +21,17 @@ import dagger.Provides;
 public class AppModule {
     // how to create objects
     // complex dependencies
+
+    private Context context;
+
+    public AppModule(Context context) {
+        this.context = context;
+    }
+
+    @Provides
+    public Context provideContext() {
+        return context;
+    }
 
     // methods for creating objects
     @Provides

@@ -1,7 +1,8 @@
 package com.example.data.net;
 
-import com.example.data.entity.DataModel;
+import com.example.data.entity.AccessTokenDataModel;
 import com.example.data.entity.DataProfile;
+import com.example.data.entity.RegisterDataModel;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -9,7 +10,6 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -66,5 +66,9 @@ public class RestService {
 
     public Observable<Void> saveProfile(DataProfile profile) {
         return restAPI.saveProfile(profile);
+    }
+
+    public Observable<AccessTokenDataModel> register(RegisterDataModel registerDataMode) {
+        return Observable.just(new AccessTokenDataModel("12344"));
     }
 }

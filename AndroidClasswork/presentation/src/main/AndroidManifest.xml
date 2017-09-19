@@ -51,10 +51,13 @@
         <activity android:name=".lesson16.Lesson16MainActivity" />
         <activity android:name=".lesson17.Lesson17MainActivity" />
         <activity android:name=".lesson18.Lesson18MainActivity" />
-        <activity android:name=".lesson19.Lesson19MainActivity"></activity>
+        <activity android:name=".lesson19.Lesson19MainActivity" />
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="489a03f63ffa8de47ae60a3b08fbce17cbd59e39" />
+
+        <activity android:name=".lesson21.Lesson21MainActivity"></activity>
     </application>
 
 </manifest>
